@@ -1,32 +1,5 @@
-var currentIndex = 0;
-
 function flipCard(card) {
   card.classList.toggle("flipped");
-}
-
-function nextCard() {
-  const carousel = document.querySelector(".carousel");
-  const totalCards = document.querySelectorAll(".carousel .card").length;
-  currentIndex = (currentIndex + 1) % totalCards;
-  carousel.style.transform = `translateX(-${
-    currentIndex * 270
-  }px)`; /* 250px width + 20px margin */
-}
-
-function prevCard() {
-  const carousel = document.querySelector(".carousel");
-  const totalCards = document.querySelectorAll(".carousel .card").length;
-  currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-  carousel.style.transform = `translateX(-${
-    currentIndex * 270
-  }px)`; /* 250px width + 20px margin */
-}
-
-function updateCarousel() {
-  const offset = -currentIndex * 320; // Adjust based on card width + margin
-  document.querySelector(
-    ".carousel"
-  ).style.transform = `translateX(${offset}px)`;
 }
 
 function showPrivacyPolicy() {
@@ -45,11 +18,19 @@ function hideMissionStatement() {
     $("#missionStatement").modal("hide");
 }
 
-var legalStatementPresented = 0;
+function showFAQ() {
+    $("#faqModal").modal("show");
+}
+
+function hideFAQ() {
+    $("#faqModal").modal("hide");
+}
+
+let legalStatementPresented = 0;
 
 async function startChat(event) {
   if ((legalStatementPresented === undefined) 
-   || (legalStatementPresented == 0         )) {
+   || (legalStatementPresented === 0        )) {
     $("#legalStatement").modal("show");
   } else {
     openChat(event);
@@ -61,7 +42,7 @@ async function closeModal(event) {
   legalStatementPresented = 0;
 }
 
-var openingMsgSent = 0;
+let openingMsgSent = 0;
 
 async function openChat(event) {
   legalStatementPresented = 1;
@@ -76,10 +57,10 @@ async function openChat(event) {
     document.querySelector(".overlay").style.display = "block";
     document.getElementById("open-button").style.display = "none";
     document.getElementById("open-button").disabled = false;
-    document.getElementById("open-button").innerHTML = "Chat with SARHA";
+    document.getElementById("open-button").innerHTML = "<img src='Images/swirl.png' alt='Chat Icon' class='chat-icon' />Chat with SARHAchat";
     document.querySelector(".user-message").focus();
 
-    if (openingMsgSent == 0) {
+    if (openingMsgSent === 0) {
       addTypingIndicator();
       setTimeout(function () {
         removeTypingIndicator();
@@ -152,9 +133,9 @@ function submitOnEnter(event) {
   }
 }
 
-var messages = [];
-var currentStage = "";
-var educationMode = false;
+let messages = [];
+let currentStage = "";
+let educationMode = false;
 
 async function sendMessage(event) {
   const input = document.querySelector(".user-message");
@@ -168,7 +149,7 @@ async function sendMessage(event) {
 
     const authToken = sessionStorage.getItem("sarha-auth-token");
 
-    var postData;
+    let postData;
 
     if (currentStage !== "") {
       postData = {
@@ -224,7 +205,7 @@ async function sendMessage(event) {
         educationMode = response.data.education_mode;
       }
 
-      if (currentStage == "PDF_GENERATION_PART") {
+      if (currentStage === "PDF_GENERATION_PART") {
         if ("path_to_pdf" in response.data) {
           addPDF(response.data.path_to_pdf);
         }
@@ -238,7 +219,7 @@ async function sendMessage(event) {
 }
 
 function addTypingIndicator() {
-  var div = document.getElementById("typing-indicator");
+  let div = document.getElementById("typing-indicator");
   if (div === null) {
     const list = document.querySelector(".chat-conversation");
     list.insertAdjacentHTML(
@@ -253,16 +234,16 @@ function addTypingIndicator() {
 }
 
 function removeTypingIndicator() {
-  var div = document.getElementById("typing-indicator");
+  let div = document.getElementById("typing-indicator");
   if (div) {
     div.remove();
   }
 }
 
 function addMessage(text, isUser) {
-  var messageRole = "system";
-  var messageClass = "chat-message-sarha";
-  var messageContent = text;
+  let messageRole = "system";
+  let messageClass = "chat-message-sarha";
+  let messageContent = text;
 
   if (isUser) {
     messageRole = "user";
@@ -395,9 +376,9 @@ const contraceptiveMethods = {
 };
 
 function addImages(keys) {
-  for (var key of keys) {
+  for (const key of keys) {
     if (key in contraceptiveMethods) {
-      var url = contraceptiveMethods[key];
+      const url = contraceptiveMethods[key];
       addImage(url.trim());
     } else {
       alert('Error in addImage(): unexpected key "' + key + '"');
@@ -406,9 +387,8 @@ function addImages(keys) {
 }
 
 function addImage(url) {
-  var messageRole = "system";
-  var messageClass = "chat-message-sarha";
-  var messageId = Date.now().toString();
+  const messageClass = "chat-message-sarha";
+  const messageId = Date.now().toString();
 
   const list = document.querySelector(".chat-conversation");
   list.insertAdjacentHTML(
@@ -421,9 +401,8 @@ function addImage(url) {
 }
 
 function addPDF(url) {
-  var messageRole = "system";
-  var messageClass = "chat-message-sarha";
-  var messageId = Date.now().toString();
+  const messageClass = "chat-message-sarha";
+  const messageId = Date.now().toString();
 
   const list = document.querySelector(".chat-conversation");
   list.insertAdjacentHTML(
@@ -448,12 +427,12 @@ function addReaction(id, reaction, otherReaction) {
     .getElementById(id + "-" + otherReaction)
     .classList.contains("visible");
 
-  var reactionToApply = "none";
+  let reactionToApply = "none";
 
   if (isVisible) {
     document.getElementById(id + "-" + reaction).classList.remove("visible");
   } else {
-    reactionToApply = reaction == "p" ? "positive" : "negative";
+    reactionToApply = reaction === "p" ? "positive" : "negative";
     document.getElementById(id + "-" + reaction).classList.add("visible");
     if (otherIsVisible) {
       document
@@ -463,7 +442,7 @@ function addReaction(id, reaction, otherReaction) {
   }
 
   for (let i = 0; i < messages.length; i++) {
-    if (messages[i].id == id) {
+    if (messages[i].id === id) {
       messages[i].feedback = reactionToApply;
     }
   }

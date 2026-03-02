@@ -48,14 +48,42 @@
   position: relative;
 }
 
-nav {
-  height: 50px;
+nav.navbar {
   padding: 10px 0;
+  z-index: 1040;
 }
 
 nav a {
-  line-height: 50px; /* Adjust line height to center text vertically */
-  padding: 0 15px; /* Adjust padding around the text */
+  line-height: 50px;
+  padding: 0 15px;
+}
+
+/* Hamburger dropdown styling on mobile */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    margin-top: 8px;
+  }
+
+  .navbar-nav .nav-link {
+    line-height: 1.5;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e9ecef;
+    font-family: "Telegraf", sans-serif;
+    font-size: 16px;
+  }
+
+  .navbar-nav .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background-color: #fcca79;
+    border-radius: 6px;
+  }
 }
 
 .subHead {
@@ -86,6 +114,7 @@ html {
   padding-top: 0;
   margin-top: 0;
   padding-bottom: 50px;
+  overflow-x: hidden;
 }
 
 .hero-section {
@@ -105,30 +134,7 @@ html {
   margin-top: -30px; /* Add negative margin to move the logo up */
 }
 
-.logo-text {
-  margin-top: 0px; /* Remove extra top margin */
-}
-
-.hero-btn {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 10px 20px;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-.hero-btn:hover {
-  background-color: #555555;
-}
-
 @media (max-width: 768px) {
-  .main-heading {
-    font-size: 32px;
-    max-width: 100%;
-  }
-
   .hero-btn {
     font-size: 14px;
   }
@@ -158,8 +164,8 @@ html {
 /* TITLE SECTION */
 .main-heading {
   font-family: "Telegraf", sans-serif;
-  font-weight: 500; /* Use Medium */
-  font-size: 60px;
+  font-weight: 500;
+  font-size: clamp(28px, 8vw, 60px);
   color: #000000;
   margin: 40px auto 20px auto; /* Keep the spacing */
   max-width: 70%;
@@ -218,16 +224,15 @@ html {
 /* WHY SARHACHAT SECTION */
 .cube-block {
   position: relative;
-  margin: 0 auto; /* Centers the block */
+  margin: 20px auto 0;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
-  border: 2px solid #000000; /* Maintains the black border */
+  border: 2px solid #000000;
   text-align: center;
-  max-width: 800px; /* Set a max-width similar to the carousel */
-  width: 100%; /* Make sure it fills the container */
-  box-sizing: border-box; /* Ensure padding doesn't affect total width */
-  margin-top: 20px;
+  max-width: 800px;
+  width: 90%;
+  box-sizing: border-box;
 }
 
 .cube-container {
@@ -299,9 +304,10 @@ html {
 /* Card Flip Styles */
 .card {
   position: relative;
-  width: 250px; /* Adjusted width */
-  height: 250px; /* Adjusted height */
-  margin: 0 10px;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
   transform-style: preserve-3d;
   transition: transform 0.6s ease-in-out;
   overflow: hidden; /* Hide content that overflows during the flip */
@@ -346,70 +352,7 @@ html {
   transform: rotateY(180deg);
 }
 
-/* Adjust card container background and positioning */
-.carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  background-color: transparent; /* Set to transparent */
-  perspective: 1500px;
-}
 
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  flex-wrap: nowrap; /* Ensure cards remain in a single line */
-}
-
-/* Carousel buttons */
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .card {
-    width: 200px;
-    height: 200px;
-  }
-
-  .carousel-button.prev {
-    left: -30px;
-  }
-
-  .carousel-button.next {
-    right: -30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    width: 150px;
-    height: 150px;
-  }
-
-  .carousel-button.prev {
-    left: -20px;
-  }
-
-  .carousel-button.next {
-    right: -20px;
-  }
-}
 
 .card:hover {
   transform: scale(1.05);
@@ -423,16 +366,15 @@ html {
 
 /* PERSONAL SUMMARIES SECTION */
 .personal-summaries-section {
-  padding: 30px 0;
   position: relative;
-  position: relative; /* Allows for absolutely positioned children */
   padding: 20px 0;
   background-color: #ffffff;
   border-radius: 10px;
-  border: 2px solid #000000; /* Adds border around the section */
-  max-width: 1050px; /* Set a max width for the section */
-  margin: 40px auto; /* Add 40px margin to create space above and below */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  border: 2px solid #000000;
+  max-width: 1050px;
+  width: 90%;
+  margin: 40px auto;
+  box-sizing: border-box;
 }
 
 .summaries-block {
@@ -507,24 +449,16 @@ html {
   color: #000000;
 }
 
-/* Flexbox layout to make sure both columns are aligned in height */
-.getting-started .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* Ensures that both columns stretch equally */
-  flex-wrap: wrap;
-}
-
+/* Getting Started columns — let Bootstrap grid handle breakpoints */
 .left-column,
 .right-column {
-  flex-basis: 48%; /* Columns take up roughly half the width */
   display: flex;
   flex-direction: column;
 }
 
 .left-column .cube-block,
 .right-column .cube-block {
-  flex-grow: 1; /* Make sure blocks grow to fill space */
+  flex-grow: 1;
 }
 
 .tips-text .tips-subHead,
@@ -677,12 +611,11 @@ html {
 
 /* Info Block specific styling inside white-background */
 .info-block {
-  background-color: #ffffff; /* White background for the block */
-  border: 1px solid #000000; /* Black border */
+  background-color: #ffffff;
   padding: 20px;
-  color: #000000; /* Black text */
+  color: #000000;
   border-radius: 10px;
-  border: 2px solid #000000; /* Adds border around the section */
+  border: 2px solid #000000;
 }
 
 .info-block h3 {
@@ -714,12 +647,6 @@ html {
   margin-bottom: 20px; /* Add spacing below thank you text */
 }
 
-.designer-credit p {
-  font-family: "Garet", sans-serif; /* Matching the rest of the site */
-  font-size: 14px;
-  margin-top: 20px; /* Add spacing above the designer credit */
-}
-
 /* Email Link Style */
 .email-link {
   color: #ffffff; /* Ensure the email link remains white */
@@ -732,9 +659,10 @@ html {
 
 /* Designer Credit Style */
 .designer-credit p {
-  font-family: "Garet", sans-serif; /* Matching the rest of the site */
+  font-family: "Garet", sans-serif;
   font-size: 14px;
   font-style: italic;
+  margin-top: 20px;
 }
 
 .designer-credit strong {
@@ -749,6 +677,31 @@ html {
 
 .designer-link:hover {
   color: #333333; /* Slightly lighter gray on hover */
+}
+
+/* FAQ Accordion */
+.accordion-button {
+  font-family: "Telegraf", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+}
+
+.accordion-body {
+  font-family: "Garet", sans-serif;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.6;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fcca79;
+  color: #000000;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 5px #fc95f0;
+  border-color: #fcca79;
 }
 
 /* PRIVACY.HTML */
@@ -834,11 +787,12 @@ html {
   background-color: #ffffff;
   color: black;
   border: 1px solid #333333;
-  border-radius: 0.375rem; /* 6px */
+  border-radius: 0.375rem;
   cursor: pointer;
   margin-bottom: 8px;
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Vertically align the image and text */
+  display: flex;
+  align-items: center;
+  z-index: 1050;
 }
 
 /* Image styling */
