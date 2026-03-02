@@ -1,0 +1,1107 @@
+::selection {
+  background-color: #fcca79; /* Your desired background color */
+}
+
+/* Telegraf Font - Regular */
+@font-face {
+  font-family: "Telegraf";
+  src: url("Fonts/Telegraf/PPTelegraf-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Telegraf Font - UltraBold */
+@font-face {
+  font-family: "Telegraf";
+  src: url("Fonts/Telegraf/PPTelegraf-UltraBold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Telegraf Font - Medium */
+@font-face {
+  font-family: "Telegraf";
+  src: url("Fonts/Telegraf/PPTelegraf-Regular.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Garet";
+  src: url("Fonts/Garet/Garet-Bold.woff2") format("woff2"),
+    url("Fonts/Garet/Garet-Bold.woff") format("woff"),
+    url("Fonts/Garet/Garet-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Add a general class for section spacing */
+.section-spacing {
+  padding: 40px 0; /* Or adjust this value to whatever looks best */
+}
+
+/* Apply this spacing to all your sections */
+.why-sarhachat,
+.topics-features,
+.getting-started,
+.feedback-section {
+  padding: 40px 0; /* Apply consistent padding across all sections */
+  position: relative;
+}
+
+nav {
+  height: 50px;
+  padding: 10px 0;
+}
+
+nav a {
+  line-height: 50px; /* Adjust line height to center text vertically */
+  padding: 0 15px; /* Adjust padding around the text */
+}
+
+.subHead {
+  font-family: "Garet", sans-serif;
+  color: #555555;
+  font-size: 18px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* Ensure h2 headings are consistent across sections */
+.getting-started h2,
+.topics-features h2,
+.why-sarhachat h2,
+.feedback-section h2 {
+  font-family: "Telegraf", sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body,
+html {
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 50px;
+}
+
+.hero-section {
+  background-image: url("Images/line-curved-pink-yellow.svg");
+  background-size: 35%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 80px 0; /* Decrease top and bottom padding */
+  text-align: center;
+  margin-top: -20px;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 5px;
+  height: auto;
+  margin-top: -30px; /* Add negative margin to move the logo up */
+}
+
+.logo-text {
+  margin-top: 0px; /* Remove extra top margin */
+}
+
+.hero-btn {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.hero-btn:hover {
+  background-color: #555555;
+}
+
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 32px;
+    max-width: 100%;
+  }
+
+  .hero-btn {
+    font-size: 14px;
+  }
+}
+
+.footer-custom {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  font-size: x-small;
+  z-index: 1020;
+}
+
+/* SARHAchat text */
+.logo-text {
+  font-family: "Telegraf", sans-serif;
+  font-weight: bold; /* Use UltraBold */
+  font-size: 18px;
+  color: #000000;
+  margin-top: 5px;
+}
+
+/* TITLE SECTION */
+.main-heading {
+  font-family: "Telegraf", sans-serif;
+  font-weight: 500; /* Use Medium */
+  font-size: 60px;
+  color: #000000;
+  margin: 40px auto 20px auto; /* Keep the spacing */
+  max-width: 70%;
+}
+
+.hero-btn {
+  font-family: "Garet", sans-serif;
+  font-size: 16px;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.hero-btn:hover {
+  background-color: #555555;
+}
+
+/* WELCOME SECTION */
+.welcome-section {
+  background-color: #000000; /* Set background to black */
+  padding: 20px 0; /* Padding for the section */
+  color: #ffffff; /* White text color */
+  text-align: center; /* Center-align all text */
+}
+
+.welcome-section .welcome-text {
+  font-family: "Telegraf", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px; /* Reduce the space between the text chunks */
+  max-width: 900px;
+  margin: 0 auto; /* Center the text block */
+}
+
+.sub-heading {
+  font-family: "Garet", sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.5;
+  margin-top: 20px; /* Reduce the space between chunks */
+  margin-bottom: 20px;
+  max-width: 800px; /* Keep text width restricted */
+  margin: 0 auto;
+}
+
+.image-divider {
+  display: block;
+  margin: 20px auto; /* Space around the image */
+  max-width: 200px; /* Adjust size as needed */
+}
+
+/* WHY SARHACHAT SECTION */
+.cube-block {
+  position: relative;
+  margin: 0 auto; /* Centers the block */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #000000; /* Maintains the black border */
+  text-align: center;
+  max-width: 800px; /* Set a max-width similar to the carousel */
+  width: 100%; /* Make sure it fills the container */
+  box-sizing: border-box; /* Ensure padding doesn't affect total width */
+  margin-top: 20px;
+}
+
+.cube-container {
+  position: relative;
+  width: 150px; /* Cube size */
+  height: 150px;
+  margin: 0 auto;
+  margin-top: -100px; /* Move the cube up */
+  z-index: 1;
+}
+
+.cube-link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 100px;
+}
+
+.cube-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Optional rounding for the cube */
+}
+
+.cube-text {
+  position: absolute;
+  top: 35%; /* Adjust positioning to center text */
+  left: 63%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cube-description {
+  font-size: 16px;
+  color: #000000;
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.cube-description h2 {
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: bold;
+  margin-top: 20px;
+  color: #000000; /* Black text */
+}
+
+.topics-features {
+  padding: 30px 0;
+  background-color: #ffffff;
+  text-align: center; /* Center-align all text */
+  position: relative;
+}
+
+/* Optional hover effects */
+.cube-container:hover .cube-image {
+  transform: scale(1.05); /* Slight scaling effect on hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+.cube-container:hover .cube-text {
+  color: #000000; /* Optional color change on hover */
+}
+
+/* Card Flip Styles */
+.card {
+  position: relative;
+  width: 250px; /* Adjusted width */
+  height: 250px; /* Adjusted height */
+  margin: 0 10px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  overflow: hidden; /* Hide content that overflows during the flip */
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  background-color: transparent; /* Set card background to transparent */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  transform-origin: center center;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border: none;
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill the card container */
+  border-radius: 20px; /* Rounded edges matching the card */
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Adjust card container background and positioning */
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background-color: transparent; /* Set to transparent */
+  perspective: 1500px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  flex-wrap: nowrap; /* Ensure cards remain in a single line */
+}
+
+/* Carousel buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card {
+    width: 200px;
+    height: 200px;
+  }
+
+  .carousel-button.prev {
+    left: -30px;
+  }
+
+  .carousel-button.next {
+    right: -30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .carousel-button.prev {
+    left: -20px;
+  }
+
+  .carousel-button.next {
+    right: -20px;
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* PERSONAL SUMMARIES SECTION */
+.personal-summaries-section {
+  padding: 30px 0;
+  position: relative;
+  position: relative; /* Allows for absolutely positioned children */
+  padding: 20px 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #000000; /* Adds border around the section */
+  max-width: 1050px; /* Set a max width for the section */
+  margin: 40px auto; /* Add 40px margin to create space above and below */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.summaries-block {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px; /* Adjust padding */
+  max-width: 70%; /* Restrict width of the content to center it */
+  margin: 0 auto; /* Center the text block */
+}
+
+.summaries-text {
+  z-index: 1; /* Ensure text appears above images */
+  width: 100%; /* Ensure text block uses full width of summaries-block */
+}
+
+.summaries-text h3 {
+  font-family: "Garet", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.summaries-text p {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 500px; /* Restrict the text width */
+  margin: 0 auto; /* Center the paragraph */
+}
+
+/* Top-right image */
+.connected-dots-rainbow {
+  position: absolute;
+  top: 0px; /* Adjust as needed to position the image */
+  right: -120px; /* Adjust as needed */
+  max-width: 250px; /* Adjust size of the image */
+  z-index: 0; /* Image stays behind the text */
+}
+
+/* Bottom-left image - Flipped version of connected-dots-rainbow */
+.connected-dots-flipped {
+  position: absolute;
+  top: 0px; /* Adjust as needed to position the image */
+  left: -120px; /* Adjust as needed */
+  max-width: 250px; /* Adjust size of the image */
+  z-index: 0; /* Image stays behind the text */
+  transform: scaleX(-1); /* Flip the image horizontally */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .connected-dots-rainbow,
+  .connected-dots-flipped {
+    max-width: 80px; /* Make images smaller on mobile screens */
+  }
+
+  .summaries-block {
+    padding: 20px 10px; /* Adjust padding on smaller screens */
+  }
+
+  .summaries-text p {
+    max-width: 100%; /* Let the text take up full width on smaller screens */
+  }
+}
+
+/* Using SARHAchat adopts Getting Started text style */
+.getting-started-text h3 {
+  font-family: "Garet", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Flexbox layout to make sure both columns are aligned in height */
+.getting-started .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensures that both columns stretch equally */
+  flex-wrap: wrap;
+}
+
+.left-column,
+.right-column {
+  flex-basis: 48%; /* Columns take up roughly half the width */
+  display: flex;
+  flex-direction: column;
+}
+
+.left-column .cube-block,
+.right-column .cube-block {
+  flex-grow: 1; /* Make sure blocks grow to fill space */
+}
+
+.tips-text .tips-subHead,
+.tips-text .cube-description {
+  flex: 1 1 auto; /* Allow text to grow and shrink as necessary */
+  margin-bottom: 10px; /* Adjust the spacing between the text blocks */
+}
+
+/* Flex-grow for text in the Tips block */
+.right-column .cube-block .summaries-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Evenly spaces out the text */
+  flex-grow: 1;
+}
+
+/* Flexbox layout for the tips section */
+.tips-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure the tip blocks are spread out */
+  flex-grow: 1; /* Make the text grow to fill available space */
+  margin-top: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column; /* Stack tip blocks vertically */
+  gap: 15px; /* Adds spacing between Be Honest and Explore and Ask */
+}
+
+.tip-block {
+  flex-grow: 1; /* Allow tip blocks to grow equally */
+}
+
+.tips-subHead {
+  font-family: "Telegraf", sans-serif; /* Match the "Be Honest" and "Explore and Ask" format */
+  font-weight: bold;
+  font-size: 24px; /* Adjusted to make "Tips for Effective Use" a subheading */
+  color: #000000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tips-text h3 {
+  font-family: "Garet", sans-serif; /* Match the format you were using for "Tips for Effective Use" */
+  font-size: 20px; /* Adjust size to match the new role as h3 */
+  font-weight: bold;
+  color: #555555; /* Slightly dimmer to distinguish the h3 */
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cube-description {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* Apply white background and black text to the section */
+.white-background {
+  background-color: #ffffff;
+  color: #000000; /* All text in this section should be black */
+}
+
+/* Ensure text inside blocks remains black */
+.white-background h2,
+.white-background p,
+.white-background h3 {
+  color: #000000;
+}
+
+/* Feedback section */
+.feedback-section {
+  padding: 30px 0;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #000000; /* Adds border around the section */
+  max-width: 90%; /* Set a max width for the section */
+  margin: 40px auto; /* Add 40px margin to create space above and below */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.feedback-block {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px; /* Adjust padding */
+  max-width: 70%; /* Restrict width of the content to center it */
+  margin: 0 auto; /* Center the text block */
+}
+
+.feedback-text {
+  z-index: 1; /* Ensure text appears above images */
+  width: 100%; /* Ensure text block uses full width of feedback-block */
+}
+
+.feedback-text h3 {
+  font-family: "Garet", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.feedback-text p {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 500px; /* Restrict the text width */
+  margin: 0 auto; /* Center the paragraph */
+}
+
+/* Left-side image */
+.red-orange-squiggle {
+  position: absolute;
+  top: 0px; /* Adjust as needed to position the image */
+  left: -120px; /* Adjust as needed */
+  max-width: 200px; /* Adjust size of the image */
+  z-index: 0; /* Image stays behind the text */
+}
+
+/* Right-side image */
+.blue-green-squiggle {
+  position: absolute;
+  top: 0px; /* Adjust as needed to position the image */
+  right: -120px; /* Adjust as needed */
+  max-width: 200px; /* Adjust size of the image */
+  z-index: 0; /* Image stays behind the text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .red-orange-squiggle,
+  .blue-green-squiggle {
+    max-width: 80px; /* Make images smaller on mobile screens */
+  }
+
+  .feedback-block {
+    padding: 20px 10px; /* Adjust padding on smaller screens */
+  }
+
+  .feedback-text p {
+    max-width: 100%; /* Let the text take up full width on smaller screens */
+  }
+}
+
+/* Info Block specific styling inside white-background */
+.info-block {
+  background-color: #ffffff; /* White background for the block */
+  border: 1px solid #000000; /* Black border */
+  padding: 20px;
+  color: #000000; /* Black text */
+  border-radius: 10px;
+  border: 2px solid #000000; /* Adds border around the section */
+}
+
+.info-block h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #000000; /* Black title */
+  text-align: center;
+}
+
+.info-block p {
+  font-size: 14px;
+  color: #000000; /* Black paragraph text */
+  text-align: center;
+}
+
+/* Combined Thank You and Designer Credit Section */
+.thank-you-designer-section {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+  text-align: center;
+  margin: 10px;
+}
+
+.thank-you-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 900px; /* Restricting width for readability */
+  margin-bottom: 20px; /* Add spacing below thank you text */
+}
+
+.designer-credit p {
+  font-family: "Garet", sans-serif; /* Matching the rest of the site */
+  font-size: 14px;
+  margin-top: 20px; /* Add spacing above the designer credit */
+}
+
+/* Email Link Style */
+.email-link {
+  color: #ffffff; /* Ensure the email link remains white */
+  text-decoration: underline;
+}
+
+.email-link:hover {
+  color: #333; /* Slightly lighter on hover */
+}
+
+/* Designer Credit Style */
+.designer-credit p {
+  font-family: "Garet", sans-serif; /* Matching the rest of the site */
+  font-size: 14px;
+  font-style: italic;
+}
+
+.designer-credit strong {
+  color: #ffffff; /* Ensure name remains white */
+}
+
+/* Designer Link Style */
+.designer-link {
+  color: #ffffff; /* White color for the link */
+  text-decoration: underline; /* Underline the link */
+}
+
+.designer-link:hover {
+  color: #333333; /* Slightly lighter gray on hover */
+}
+
+/* PRIVACY.HTML */
+.privacy-section {
+  padding: 40px 0;
+  background-color: #ffffff;
+  color: #555555;
+  text-align: left;
+}
+
+.privacy-content h3 {
+  font-family: "Telegraf", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.privacy-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #555555;
+}
+
+.privacy-content a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.privacy-content a:hover {
+  color: #333;
+}
+
+/* MISSION.HTML */
+.mission-section {
+  padding: 30px 0;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  max-width: 1050px;
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+
+.mission-section h2 {
+  font-family: "Garet", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+
+.mission-section p {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 700px; /* Adjust for better readability */
+  margin: 0 auto;
+}
+
+/* CHATBOT */
+.overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1030; /* Above the page content, below the chat window */
+}
+
+/* Button styling */
+.chat-open-btn,
+.chat-auth-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #333333;
+  border-radius: 0.375rem; /* 6px */
+  cursor: pointer;
+  margin-bottom: 8px;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align the image and text */
+}
+
+/* Image styling */
+.chat-icon {
+  width: 30px; /* Set a width for the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 8px; /* Space between the image and text */
+}
+
+.chat-open-btn {
+  display: block;
+}
+
+.chat-auth-btn {
+  display: none;
+}
+
+.chat-window {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  width: 75%;
+  height: 80%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.375rem; /* 6px */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1030;
+}
+
+.responsive-text {
+  font-size: 18px; /* Default font size for larger devices */
+}
+
+@media (max-width: 576px) {
+  .chat-window {
+    width: 98%; /* Specific width for small devices */
+    right: 50%;
+    transform: translateX(50%); /* Center the chat window on small screens */
+  }
+
+  .responsive-text {
+    font-size: 14px; /* Adjust font size for extra small devices */
+  }
+}
+
+.chat-header {
+  border-bottom: 1px solid #dee2e6;
+  height: 8%;
+}
+
+.chat-conversation {
+  padding: 5px 10px;
+  height: 60%;
+  min-width: -webkit-fill-available;
+  overflow-y: auto;
+  position: relative;
+}
+
+.chat-message {
+  padding: 5px 10px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  max-width: 80%;
+  position: relative;
+}
+
+.chat-message-img {
+  padding: 5px 10px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  max-width: 80%;
+  position: relative;
+}
+
+.chat-message-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Maintain aspect ratio and fit within the parent */
+}
+
+.chat-message-user {
+  background: #fcca79;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.chat-message-sarha {
+  background-color: #e2e2e2;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.typing-indicator::before,
+.typing-indicator::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  animation: blink 1.5s infinite both;
+}
+
+.typing-indicator::before {
+  left: 10px;
+  animation-delay: 0s;
+}
+
+.typing-indicator::after {
+  left: 30px;
+  animation-delay: 0.5s;
+}
+
+.typing-indicator span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  animation: blink 1.5s infinite both;
+  animation-delay: 1s;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.reactions {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.reactions-btn-group {
+  position: absolute;
+  left: 95%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: large;
+}
+
+.reactions-btn {
+  opacity: 0; /* Start with the button invisible */
+  transition: opacity 0.3s; /* Smooth transition for the hover effect */
+  cursor: pointer;
+}
+
+.reactions-btn.visible {
+  opacity: 1;
+  z-index: 9;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: #fc95f0;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+  color: #fcca79;
+}
+
+.btn-link:focus,
+.btn-link:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-group .btn {
+  margin-right: -15px; /* Negative margin to pull buttons closer */
+}
+
+@media (pointer: coarse), (hover: none) {
+  .reactions:active .reactions-btn {
+    opacity: 1;
+  }
+}
+
+@media (pointer: fine) and (hover: hover) {
+  .reactions:hover .reactions-btn {
+    opacity: 1;
+  }
+}
+
+.chat-input {
+  height: 20%;
+  min-width: -webkit-fill-available;
+  overflow-y: auto;
+}
+
+.user-message {
+  min-height: -webkit-fill-available;
+  min-width: -webkit-fill-available;
+  overflow-y: auto;
+}
+
+.chat-input input {
+  height: 100%;
+  min-width: -webkit-fill-available;
+  overflow-y: auto;
+}
+
+.chat-footer {
+  height: 12%;
+}
+
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+.content-area {
+  background: none; /* Remove background color */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */
+  box-shadow: none; /* Remove any shadow */
+}
+
+.container {
+  padding: 20px 0; /* Maintain good spacing */
+}
+
+.btn-primary {
+  background-color: black;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+}
+
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active {
+    outline: none; /* Removes the default browser focus outline */
+    background: linear-gradient(to right, #fc95f0, #fcca79); /* Custom background on focus/active */
+    border: 1px solid #fcca79; /* Optional: Change border color */
+    box-shadow: 0 0 10px #fc95f0; /* Optional: Adds a glow effect */
+    color: white; /* Ensure the text is readable */
+}
+
+textarea:focus,
+textarea:active {
+    outline: none; /* Removes the default browser focus outline */
+    border: 1px solid #fcca79; /* Optional: Change border color */
+    box-shadow: 0 0 5px #fc95f0; /* Optional: Adds a glow effect */
+}

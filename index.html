@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>SARHAchat™ v1.1</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css?v=1.1" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">SARHAchat™</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showMissionStatement()">Mission</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showPrivacyPolicy()">Privacy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content of the Home page -->
+    <section class="hero-section">
+      <div class="container text-center">
+        <img src="Images/logo.svg" alt="SARHAchat Logo" class="logo" />
+        <p class="logo-text">SARHAchat</p>
+        <h1 class="main-heading">
+          The Sexual and Reproductive Health Assistant
+        </h1>
+      </div>
+    </section>
+
+    <section class="welcome-section">
+      <div class="container">
+        <!-- Main Heading -->
+        <p class="welcome-text">
+          Welcome to SARHAchat, your personal assistant for sexual and
+          reproductive health!
+        </p>
+
+        <!-- Image Divider -->
+        <img
+          src="Images/straight-connected-dots-rainbow.png"
+          alt="Divider Image"
+          class="image-divider"
+        />
+
+        <!-- Sub-heading -->
+        <p class="sub-heading">
+          SARHAchat is designed to provide you with personalized support and
+          information. <br />
+          Here's how to get started and make the most of your experience with
+          SARHAchat.
+        </p>
+      </div>
+    </section>
+
+    <section class="why-sarhachat">
+      <div class="container text-center">
+        <h2>Why SARHAchat?</h2>
+        <p class="subHead">Our concerns are your concerns.</p>
+        <div class="row mt-4">
+          <!-- Problem Cube Block -->
+          <div class="col-md-6">
+            <div class="cube-block">
+              <a href="#" class="cube-link" onclick="showMissionStatement()">
+                <div class="cube-container">
+                  <img
+                    src="Images/multicolor-cube.png"
+                    alt="multicolor cube"
+                    class="cube-image"
+                  />
+                  <div class="cube-text">The Problem</div>
+                </div>
+              </a>
+              <p class="cube-description">
+                Getting accurate and reliable sexual and reproductive health info can be a struggle, especially when you need it fast, privately, and without the hassle. That’s where SARHAchat steps in.</div>
+          </div>
+
+          <!-- Privacy Cube Block -->
+          <div class="col-md-6">
+            <div class="cube-block">
+              <a a href="#" class="cube-link" onclick="showPrivacyPolicy()">
+                <div class="cube-container">
+                  <img
+                    src="Images/multicolor-cube.png"
+                    alt="multicolor cube"
+                    class="cube-image"
+                  />
+                  <div class="cube-text">Your Privacy</div>
+                </div>
+              </a>
+              <p class="cube-description">
+                Your privacy is our priority. We collect non-identifiable chat data, like preferences and feedback, to improve our service. We never collect personal or identifiable information.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASK Section -->
+    <section class="topics-features ask-section">
+      <div class="container text-center">
+        <h2>Topics & Features</h2>
+        <p class="subHead">
+          Get on-demand emotional support and advice in a private and anonymous
+          manner.
+        </p>
+        <div class="row justify-content-center">
+          <!-- Card 1: Emotional Support -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
+            <div class="card" onclick="flipCard(this)">
+              <div class="card-inner">
+                <!-- Front Side of Card with Image -->
+                <div class="card-front">
+                  <img
+                    src="Images/Cards/emotional-support-front.png"
+                    class="img-fluid"
+                    alt="Emotional Support Front"
+                  />
+                </div>
+                <!-- Back Side of Card with Image -->
+                <div class="card-back">
+                  <img
+                    src="Images/Cards/emotional-support-back.png"
+                    class="img-fluid"
+                    alt="Emotional Support Back"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Contraception Options -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
+            <div class="card" onclick="flipCard(this)">
+              <div class="card-inner">
+                <!-- Front Side of Card with Image -->
+                <div class="card-front">
+                  <img
+                    src="Images/Cards/contraception-options-front.png"
+                    class="img-fluid"
+                    alt="Contraception Options Front"
+                  />
+                </div>
+                <!-- Back Side of Card with Image -->
+                <div class="card-back">
+                  <img
+                    src="Images/Cards/contraception-options-back.png"
+                    class="img-fluid"
+                    alt="Contraception Options Back"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Sexual Health -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
+            <div class="card" onclick="flipCard(this)">
+              <div class="card-inner">
+                <!-- Front Side of Card with Image -->
+                <div class="card-front">
+                  <img
+                    src="Images/Cards/sexual-health-front.png"
+                    class="img-fluid"
+                    alt="Sexual Health Front"
+                  />
+                </div>
+                <!-- Back Side of Card with Image -->
+                <div class="card-back">
+                  <img
+                    src="Images/Cards/sexual-health-back.png"
+                    class="img-fluid"
+                    alt="Sexual Health Back"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Personal Summaries -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
+            <div class="card" onclick="flipCard(this)">
+              <div class="card-inner">
+                <!-- Front Side of Card with Image -->
+                <div class="card-front">
+                  <img
+                    src="Images/Cards/personal-summaries-front.png"
+                    class="img-fluid"
+                    alt="Personal Summaries Front"
+                  />
+                </div>
+                <!-- Back Side of Card with Image -->
+                <div class="card-back">
+                  <img
+                    src="Images/Cards/personal-summaries-back.png"
+                    class="img-fluid"
+                    alt="Personal Summaries Back"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="personal-summaries-section">
+      <div class="summaries-block">
+        <div class="summaries-text">
+          <h3>Personalized Summaries</h3>
+          <p>
+            After your session, download a personalized summary of your
+            conversation. You can keep this to remember what was discussed and
+            share the summary with your healthcare provider to discuss further.
+          </p>
+        </div>
+        <!-- Top-right image -->
+        <img
+          src="Images/connected-dots-rainbow.png"
+          alt="Connected Dots Rainbow"
+          class="connected-dots-rainbow"
+        />
+        <!-- Bottom-left flipped image -->
+        <img
+          src="Images/connected-dots-rainbow.png"
+          alt="Connected Dots Rainbow Flipped"
+          class="connected-dots-flipped"
+        />
+      </div>
+    </section>
+
+    <section class="getting-started">
+      <div class="container text-center">
+        <h2>Getting Started</h2>
+        <!-- Matches the Topics & Features heading style -->
+        <p class="subHead">
+          SARHAchat will guide you through a conversation, providing information
+          and asking questions to better understand your unique needs.
+        </p>
+
+        <!-- Row with Two Columns -->
+        <div class="row">
+          <!-- Left Column: Accessing and Using SARHAchat -->
+          <div class="col-md-6 left-column">
+            <!-- Accessing SARHAchat Block -->
+            <div class="cube-block">
+              <a href="#" class="cube-link">
+                <div class="cube-container">
+                  <img
+                    src="Images/one-plate.png"
+                    alt="one plate"
+                    class="cube-image"
+                  />
+                </div>
+              </a>
+              <div class="getting-started-text">
+                <h3>Accessing SARHAchat</h3>
+                <p class="subHead">
+                  You can access SARHAchat by clicking the "Chat with SARHAchat"
+                  button in the bottom right corner of your screen.
+                </p>
+              </div>
+            </div>
+
+            <!-- Using SARHAchat Block -->
+            <div class="cube-block">
+              <a href="#" class="cube-link">
+                <div class="cube-container">
+                  <img
+                    src="Images/two-plate.png"
+                    alt="two plate"
+                    class="cube-image"
+                  />
+                </div>
+              </a>
+              <div class="getting-started-text">
+                <!-- "Using SARHAchat" adopts the "Getting Started" text style -->
+                <h3>Using SARHAchat</h3>
+                <p class="subHead">
+                  Start a conversation by answering the opening prompt or typing
+                  in your question.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Tips for Effective Use -->
+          <div class="col-md-6 right-column">
+            <div class="cube-block">
+              <div class="cube-container">
+                <img
+                  src="Images/tips-plate.png"
+                  alt="tips plate"
+                  class="cube-image"
+                />
+              </div>
+              <div class="tips-text">
+                <p class="tips-subHead">Tips for Effective Use</p>
+                <div class="flex-container">
+                  <div class="tip-block">
+                    <h3>Be Honest</h3>
+                    <p class="cube-description">
+                      Provide accurate information to receive the best
+                      recommendations and support.
+                    </p>
+                  </div>
+                  <div class="tip-block">
+                    <h3>Explore and Ask</h3>
+                    <p class="cube-description">
+                      Don’t hesitate to ask any questions, no matter how
+                      sensitive. SARHAchat is here to handle a wide range of
+                      topics with empathy and confidentiality.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedback-section section-spacing white-background">
+      <div class="feedback-block">
+        <div class="feedback-text">
+          <h3 class="text-center">Feedback</h3>
+          <p class="feedback-intro text-center">
+            After your session, please provide your feedback to help us improve
+            SARHAchat using the following link:
+          </p>
+          <!-- Updated Button with Feedback Button Styles -->
+          <div class="text-center">
+            <a href="https://unc.az1.qualtrics.com/jfe/form/SV_bqrxRJ6KLpbKyB8" class="btn btn-primary hero-btn" target="_blank">
+              Provide Feedback
+            </a>
+          </div>
+    
+          <!-- Support and Help Section -->
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <div class="info-block">
+                <h3>Support and Help</h3>
+                <p>
+                  <strong>Technical Support</strong><br />
+                  If you encounter any technical issues, please note that in the feedback survey.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-block">
+                <h3>Privacy and Security</h3>
+                <p>
+                  <strong>Confidentiality</strong><br />
+                  Your privacy is our priority. All conversations are secure and confidential.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Surrounding images -->
+        <img src="Images/red-orange-squiggle.png" alt="Red Orange Squiggle" class="red-orange-squiggle" />
+        <img src="Images/blue-green-squiggle.png" alt="Blue Green Squiggle" class="blue-green-squiggle" />
+      </div>
+    </section>
+    
+
+<!-- Thank You and Designer Credit Section -->
+<section class="thank-you-designer-section">
+  <div class="container">
+    <div class="thank-you-text text-center">
+      <p>
+        Thank you for using SARHAchat. We are here to support you in making
+        informed and empowered decisions about your sexual and reproductive
+        health. If you have any questions or need further assistance, feel free
+        to reach out through our support channels at
+        <a href="mailto:Kandyce@SARHAchat.com" class="email-link">
+          Kandyce@SARHAchat.com</a
+        >.
+      </p>
+    </div>
+    <div class="designer-credit text-center">
+      <p class="designer-credit">
+        Designed by
+        <strong>
+          <a
+            href="https://www.linkedin.com/in/laurenjudithjones/"
+            class="designer-link"
+            target="_blank"
+            >Lauren Jones</a
+          >
+        </strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<form onsubmit="startChat(event)">
+  <button type="button" class="chat-open-btn" id="open-button" onclick="startChat(event)">
+    <img src="Images/swirl.png" alt="Chat Icon" class="chat-icon" />
+    Chat with SARHAchat
+  </button>
+</form>
+
+    <div
+      class="modal fade"
+      id="missionStatement"
+      tabindex="-1"
+      aria-labelledby="missionStatementLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="missionStatementLabel">
+            </h5>
+          </div>
+          <div class="modal-body">
+            <h2 class="text-center">Our Mission</h2>
+            <p class="subHead text-center">
+              Getting accurate and reliable sexual and reproductive health info can
+              be a struggle, especially when you need it fast, privately, and
+              without the hassle. That’s where SARHAchat steps in. We’ve created a
+              tool that’s all about you—offering personalized, empathetic, and
+              accurate guidance whenever you need it. Unlike scrolling through
+              random posts, our chat delivers trustworthy info tailored just for
+              you, while keeping your privacy on lock. Whether you're making big
+              health decisions or just need solid sexual and reproductive
+              health advice, our chat is here to empower you and your health
+              journey.
+            </p>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="privacyPolicy"
+      tabindex="-1"
+      aria-labelledby="privacyPolicyLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="privacyPolicyLabel">
+              Privacy Policy
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p class="subHead text-center">
+              Thank you for choosing us for your health information needs. We are 
+              committed to protecting your personal information and your right to 
+              privacy.
+            </p>
+
+            <div class="privacy-content">
+              <p>
+                If you have any questions or concerns about our policy or practices,
+                please contact us at
+                <a href="mailto:info@SARHAchat.com">info@SARHAchat.com</a>.
+              </p>
+
+              <p>
+                <strong>Conversational Data:</strong><br />
+                We collect conversation data from the chat, such as preferences,
+                user feedback, and disclosed non-identifiable health information.
+                This data helps us improve the chat’s performance and accuracy to
+                better serve you and our community. We do not collect any personal
+                or identifiable information.
+              </p>
+
+              <p>
+                <strong>Automatically Collected Information:</strong><br />
+                When you visit our site, we automatically collect certain 
+                information, including anonymized portions of your IP address, browser 
+                and device characteristics, operating system, language preferences, 
+                referring URLs, approximate location, and details about how and when 
+                you access and use our site. This information does not directly reveal 
+                your specific identity (such as your name or contact details) and is 
+                primarily used to maintain the security and functionality 
+                of our site and for internal analytics purposes.
+              </p>
+              
+              <p>
+                <strong>Data Retention and Consent:</strong><br />
+                We retain this automatically collected information only for as long as 
+                necessary to fulfill the purposes described above or as required by law. 
+                Your consent to the collection of this information is implied by your 
+                use of the website; however, you may withdraw consent at any time 
+                by discontinuing use of our site.
+    
+              </p>
+
+              <p>
+                <strong>Performance Improvement:</strong><br />
+                We use collected data for analysis, identifying usage trends,
+                evaluating the chat's effectiveness, and improving your experience.
+              </p>
+
+              <p>
+                <strong>Legal Compliance:</strong><br />
+                In response to subpoenas or other legal requests, we may need to
+                review data we hold to determine the appropriate response.
+              </p>
+
+              <p>
+                <strong>Will Your Information Be Shared?</strong><br />
+                We use the data collected to improve our chat service.
+                Unidentifiable data, such as common preferences, health concerns,
+                and user feedback, may be shared for research purposes.
+              </p>
+
+              <p>
+                <strong>Legal Obligations:</strong><br />
+                We may disclose your information when required by law, such as to
+                comply with legal processes, government requests, court orders, or
+                in response to national security or law enforcement requirements.
+              </p>
+
+              <p>
+                <strong>How Do We Keep Your Information Safe?</strong><br />
+                We are committed to protecting chat data through organizational and
+                technical security measures, as set by the University of North
+                Carolina at Chapel Hill. These measures include:
+              </p>
+
+              <ul>
+                <li>
+                  <strong>Multifactor Authentication (MFA):</strong> A security
+                  process requiring multiple verification methods, such as a
+                  password and a code sent to your phone.
+                </li>
+                <li>
+                  <strong>Encryption:</strong> Information is converted into a code
+                  to prevent unauthorized access.
+                </li>
+              </ul>
+
+              <p>
+                <strong>Privacy Rights:</strong><br />
+                You may end your chat session at any time and are not obligated to
+                answer any questions.
+              </p>
+
+              <p>
+                <strong>Updates to This Policy:</strong><br />
+                Yes, we may update this policy as needed to comply with relevant
+                laws and security measures. The updated version will be indicated by
+                a revised date and will be effective as soon as it is accessible. We
+                encourage you to review this policy regularly to stay informed about
+                how we are protecting your information.
+              </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div
+      class="modal fade"
+      id="legalStatement"
+      tabindex="-1"
+      aria-labelledby="legalStatementLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="legalStatementLabel">
+              Legal Statement
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              I want to share that I’m here to support your overall health and
+              well-being, including options around reproductive health that
+              align with your goals and values. I want to assure you that this
+              is a safe space for us to explore your options and answer any
+              questions you have around topics like birth control and hormone
+              therapy. Our conversation will be guided by mutual respect for
+              what you feel is best for you! After discussing the options, I
+              will create a personalized profile for you to use as a reference
+              and to share with your healthcare provider. I do want to make sure
+              you understand that anything we discuss should not be interpreted
+              as a medical diagnosis, medical treatment, or replace professional
+              medical advice. If you have, or think you have a medical concern,
+              please contact your healthcare provider.  Would you like to
+              continue?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              onclick="closeModal(event)"
+            >
+              No
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              onclick="openChat(event)"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="feedbackSurvey"
+      tabindex="-1"
+      aria-labelledby="feedbackSurveyLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="feedbackSurveyLabel">
+              Please Leave Your Feedback
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              Please take a moment to fill out the survey and give us feedback.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a
+              href="https://unc.az1.qualtrics.com/jfe/form/SV_bqrxRJ6KLpbKyB8"
+              target="_blank"
+            >
+              <i class="bi bi-card-checklist" style="font-size: x-large"></i>
+              Give Feedback
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form
+      class="chat-window bg-white"
+      id="chat-window-form"
+      onsubmit="sendMessage(event)"
+    >
+      <div class="chat-header p-2 text-end">
+        <button type="button" class="btn-close" onclick="closeChat()"></button>
+      </div>
+      <div class="chat-conversation d-flex flex-column"></div>
+      <div class="chat-input p-2">
+        <textarea
+          class="user-message"
+          autofocus
+          onkeydown="submitOnEnter(event)"
+        ></textarea>
+      </div>
+      <div class="chat-footer text-end p-2">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="sendMessage(event)"
+        >
+          <i class="bi bi-send" style="font-size: x-large"></i>
+        </button>
+      </div>
+    </form>
+
+    <div class="footer-custom">
+      This site is protected by reCAPTCHA and the Google
+      <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+      <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdOlQsqAAAAAIdOYPixmKb_vzOQvq7CaXlv_SJG"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // Cache busting - Updated: 2025-08-21 15:30:00
+        var currentIndex = 0;
+        
+        function flipCard(card) {
+          card.classList.toggle("flipped");
+        }
+        
+        function nextCard() {
+          const carousel = document.querySelector(".carousel");
+          const totalCards = document.querySelectorAll(".carousel .card").length;
+          currentIndex = (currentIndex + 1) % totalCards;
+          carousel.style.transform = `translateX(-${
+            currentIndex * 270
+          }px)`; /* 250px width + 20px margin */
+        }
+        
+        function prevCard() {
+          const carousel = document.querySelector(".carousel");
+          const totalCards = document.querySelectorAll(".carousel .card").length;
+          currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+          carousel.style.transform = `translateX(-${
+            currentIndex * 270
+          }px)`; /* 250px width + 20px margin */
+        }
+        
+        function updateCarousel() {
+          const offset = -currentIndex * 320; // Adjust based on card width + margin
+          document.querySelector(
+            ".carousel"
+          ).style.transform = `translateX(${offset}px)`;
+        }
+        
+        function showPrivacyPolicy() {
+            $("#privacyPolicy").modal("show");
+        }
+        
+        function hidePrivacyPolicy() {
+            $("#privacyPolicy").modal("hide");
+        }
+        
+        function showMissionStatement() {
+            $("#missionStatement").modal("show");
+        }
+        
+        function hideMissionStatement() {
+            $("#missionStatement").modal("hide");
+        }
+        
+        var legalStatementPresented = 0;
+        
+        async function startChat(event) {
+          if ((legalStatementPresented === undefined) 
+           || (legalStatementPresented == 0         )) {
+            $("#legalStatement").modal("show");
+          } else {
+            openChat(event);
+          }
+        }
+        
+        async function closeModal(event) {
+          $("#legalStatement").modal("hide");
+          legalStatementPresented = 0;
+        }
+        
+        var openingMsgSent = 0;
+        
+        async function openChat(event) {
+          legalStatementPresented = 1;
+        
+          document.getElementById("open-button").innerHTML =
+            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening...';
+          document.getElementById("open-button").disabled = true;
+        
+          const token = sessionStorage.getItem("sarha-auth-token");
+          if (await verifyToken(token)) {
+            document.querySelector(".chat-window").style.display = "block";
+            document.querySelector(".overlay").style.display = "block";
+            document.getElementById("open-button").style.display = "none";
+            document.getElementById("open-button").disabled = false;
+            document.getElementById("open-button").innerHTML = "<img src='Images/swirl.png' alt='Chat Icon' class='chat-icon' />Chat with SARHAchat";
+            document.querySelector(".user-message").focus();
+        
+            if ((openingMsgSent === undefined)
+             || (openingMsgSent == 0         )) {
+              addTypingIndicator();
+              setTimeout(function () {
+                removeTypingIndicator();
+                addMessage(
+                  `Hi! How can I help you with your sexual and reproductive health today?
+                
+                  - Answer questions: Ask me any question about your body, sex, periods, pregnancy, STIs, birth control, or anything related
+                  - Birth control help: We can talk about your health, what you need, and what might work best for your life. Then we'll find birth control options that fit you.
+
+                  <br><br>Just let me know which one feels right — Answering questions or Birth control help`,
+                  0
+                );
+              }, 1500);
+              openingMsgSent = 1;
+            }
+          } else {
+            await authorizeChat(event);
+          }
+        }
+        
+        async function authorizeChat(event) {
+          event.preventDefault();
+          grecaptcha.ready(function () {
+            grecaptcha
+              .execute("6LdOlQsqAAAAAIdOYPixmKb_vzOQvq7CaXlv_SJG", { action: "submit" })
+              .then(async function (googleToken) {
+                const authUrl =
+                  "https://ud2krsh537.execute-api.us-east-1.amazonaws.com/production/api/authorize";
+                const postData = { token: googleToken };
+                const headers = { headers: { "Content-Type": "application/json" } };
+        
+                try {
+                  const response = await axios.post(authUrl, postData, headers);
+        
+                  if ("token" in response.data) {
+                    sessionStorage.setItem("sarha-auth-token", response.data.token);
+                  }
+                } catch (error) {
+                  alert("Error in authorizeChat(): " + JSON.stringify(error));
+                }
+        
+                openChat();
+              });
+          });
+        }
+        
+        async function verifyToken(authToken) {
+          const authUrl =
+            "https://ud2krsh537.execute-api.us-east-1.amazonaws.com/production/api/verify";
+          const postData = { token: authToken };
+          const headers = { headers: { "Content-Type": "application/json" } };
+        
+          try {
+            const response = await axios.post(authUrl, postData, headers);
+            if ("token_is_valid" in response.data) {
+              return response.data.token_is_valid;
+            } else {
+              return false;
+            }
+          } catch (error) {
+            alert("Error in verifyToken(): " + JSON.stringify(error));
+          }
+          return false;
+        }
+        
+        function submitOnEnter(event) {
+          if (event.key === "Enter" && !event.shiftKey) {
+            event.preventDefault();
+            sendMessage(event);
+          }
+        }
+        
+        var messages = [];
+        var currentStage = "";
+        var educationMode = false;
+        
+        async function sendMessage(event) {
+          const input = document.querySelector(".user-message");
+          const text = input.value.trim();
+          if (text !== "") {
+            addMessage(text, 1);
+            input.value = "";
+            input.focus();
+        
+            addTypingIndicator();
+        
+            const authToken = sessionStorage.getItem("sarha-auth-token");
+        
+            var postData;
+        
+            if ((currentStage !== undefined)
+             && (currentStage !== ""       )) {
+              postData = {
+                chat_history: messages,
+                current_stage: currentStage,
+                education_mode: educationMode,
+                authentication_token: authToken,
+              };
+            } else {
+              postData = {
+                chat_history: messages,
+                education_mode: educationMode,
+                authentication_token: authToken,
+              };
+            }
+        
+            const chatUrl =
+              "https://q6isljp5pvpfd557vf5e5oimsa0rlirv.lambda-url.us-east-1.on.aws";
+            const headers = { headers: { "Content-Type": "application/json" } };
+        
+            try {
+              const response = await axios.post(chatUrl, postData, headers);
+        
+              if ("attached_image_identifiers" in response.data) {
+                if (response.data.attached_image_identifiers !== null) {
+                  removeTypingIndicator();
+                  addImages(response.data.attached_image_identifiers);
+                  addTypingIndicator();
+                }
+              }
+        
+              if ("response" in response.data || Array.isArray(response.data.response_chunks)) {
+                removeTypingIndicator();
+                const chunks = response.data.response_chunks;
+                if (Array.isArray(chunks) && chunks.length > 0) {
+                  chunks.forEach((chunk) => addMessage(chunk, 0));
+                } else {
+                  addMessage(response.data.response, 0);
+                }
+              } else {
+                removeTypingIndicator();
+                alert(
+                  "Error no response from chatbot: " + JSON.stringify(response.data)
+                );
+              }
+        
+              if ("current_stage" in response.data) {
+                currentStage = response.data.current_stage;
+              }
+              
+              if ("education_mode" in response.data) {
+                educationMode = response.data.education_mode;
+              }
+        
+              if (currentStage == "PDF_GENERATION_PART") {
+                if ("path_to_pdf" in response.data) {
+                  addPDF(response.data.path_to_pdf);
+                }
+              }
+            } catch (error) {
+              removeTypingIndicator();
+              alert("Error in sendMessage(): " + JSON.stringify(error));
+            }
+          }
+          event.preventDefault();
+        }
+        
+        function addTypingIndicator() {
+          var div = document.getElementById("typing-indicator");
+          if (div === null) {
+            const list = document.querySelector(".chat-conversation");
+            list.insertAdjacentHTML(
+              "beforeend",
+              `<div class="chat-message chat-message-sarha typing-indicator" id="typing-indicator">
+                        <span></span> 
+                    </div> `
+            );
+        
+            list.scrollTop = list.scrollHeight + list.clientHeight;
+          }
+        }
+        
+        function removeTypingIndicator() {
+          var div = document.getElementById("typing-indicator");
+          if (div) {
+            div.remove();
+          }
+        }
+        
+        function addMessage(text, isUser) {
+          var messageRole = "system";
+          var messageClass = "chat-message-sarha";
+          var messageContent = text;
+        
+          if (isUser) {
+            messageRole = "user";
+            messageClass = "chat-message-user";
+          } else {
+            const boldMarkDownRegex = /\*\*(.*?)\*\*/g;
+            if (boldMarkDownRegex.test(messageContent)) {
+              const regexReplacements = [
+                {
+                  regex: /\.([^.]+\? Otherwise, I will move [^.]+\.)/g,
+                  replaceFunc: (match, p1) => `.<br><br>${p1}`,
+                },
+                {
+                  regex: /\.([^.*]+\?)\s*$/,
+                  replaceFunc: (match, p1) => `.<br><br>${p1}`,
+                },
+                {
+                  regex: /(\d+\.\s*)\*\*(.*?)\*\*/g,
+                  replaceFunc: (match, p1, p2) => `<br><br>${p1}<b>${p2}</b>`,
+                },
+                {
+                  regex: /\*\*(\s*\d+\s*.*?)\*\*/g,
+                  replaceFunc: (match, p1) => `<br><br><b>${p1}</b>`,
+                },
+                {
+                  regex: /\s*-\s*\*\*(.*?)\*\*/g,
+                  replaceFunc: (match, p1) => `<br>• <b>${p1}</b>`,
+                },
+                {
+                  regex: /(\!|\.|\?)\s+\*\*(.*?)\*\*/g,
+                  replaceFunc: (match, p1, p2) => `${p1}<br><b>${p2}</b>`,
+                },
+                {
+                  regex: /\*\*(.*?)\*\*/g,
+                  replaceFunc: (match, p1) => `<b>${p1}</b>`,
+                },
+                {
+                  regex: /\s+-\s+(.+)/g,
+                  replaceFunc: (match, p1) => `<br>• ${p1}`,
+                },
+                {
+                  regex: /### ([^<])+/g,
+                  replaceFunc: (match, p1) => `<br><h4>${p1}</h4>`,
+                },
+              ];
+              regexReplacements.forEach((replacement) => {
+                messageContent = messageContent.replace(
+                  replacement.regex,
+                  replacement.replaceFunc
+                );
+              });
+            }
+            
+            const isOpening = messageContent.startsWith("Hi! How can I help you with your sexual");
+            if (isOpening) {
+              messageContent = messageContent.replace(
+                /-\s*([^:\n]+):\s*([^\n]+)/g,
+                '<br>• <b>$1</b>: $2'
+              );
+            }
+          }
+        
+          const chat = {
+            role: messageRole,
+            content: messageContent,
+            id: Date.now().toString(),
+            feedback: "none",
+          };
+          messages.push(chat);
+        
+          const list = document.querySelector(".chat-conversation");
+          list.insertAdjacentHTML(
+            "beforeend",
+            `<div class="chat-message ${messageClass}" data-key="${chat.id}">
+                    <span>${chat.content}</span> 
+                    ${
+                      isUser
+                        ? `
+                </div> `
+                        : `
+                    <div class="reactions">
+                        <div class="btn-group reactions-btn-group" role="group">
+                            <button type="button" class="btn btn-link reactions-btn" id="${chat.id}-p" onclick="addReaction(${chat.id},'p','n')">
+                                <i class="bi bi-hand-thumbs-up"></i>
+                            </button> 
+                            <button type="button" class="btn btn-link reactions-btn" id="${chat.id}-n" onclick="addReaction(${chat.id},'n','p')">
+                                <i class="bi bi-hand-thumbs-down"></i>
+                            </button> 
+                        </div>
+                    </div>
+                </div>`
+                    }`
+          );
+          list.scrollTop = list.scrollHeight + list.clientHeight;
+        }
+        
+        const contraceptiveMethods = {
+          "[ARM_IMPLANT_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/implant_full.jpg",
+          "[CERVICAL_CAP_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/cervical_cap_full.jpeg",
+          "[PILLS]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/how_to_take_contraceptive_pills.jpeg",
+          "[IUD_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/iuds_full.jpg",
+          "[DIAPHRAGM_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/diaphragm_full.jpg",
+          "[EXTERNAL_CONDOM_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/male_condom.jpeg",
+          "[FERTILITY_AWARENESS_METHOD_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/natural_family_planning_calendar.jpeg",
+          "[INTERNAL_CONDOMS_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/female_condom.jpeg",
+          "[PATCH_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/patch.jpeg",
+          "[PULLING_OUT_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/pulling_out.jpeg",
+          "[SHOT_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/injectable.jpeg",
+          "[SPERMICIDE_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/spermicides.jpeg",
+          "[TUBAL_LIGATION_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/female_sterilisation.jpg",
+          "[VAGINAL_RING_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/ring_full.jpg",
+          "[VAGINAL_SPONGE_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/sponge_full.jpg",
+          "[VASECTOMY_IMAGE]":
+            "https://chatbot-content-storage.s3.amazonaws.com/images/male_sterilisation.jpeg",
+        };
+        
+        function addImages(keys) {
+          for (var key of keys) {
+            if (key in contraceptiveMethods) {
+              var url = contraceptiveMethods[key];
+              addImage(url.trim());
+            } else {
+              alert('Error in addImage(): unexpected key "' + key + '"');
+            }
+          }
+        }
+        
+        function addImage(url) {
+          var messageRole = "system";
+          var messageClass = "chat-message-sarha";
+          var messageId = Date.now().toString();
+        
+          const list = document.querySelector(".chat-conversation");
+          list.insertAdjacentHTML(
+            "beforeend",
+            `<div class="chat-message-img ${messageClass}" data-key="${messageId}">
+                    <img src="${url}"/>
+                </div> `
+          );
+          list.scrollTop = list.scrollHeight + list.clientHeight;
+        }
+        
+        function addPDF(url) {
+          var messageRole = "system";
+          var messageClass = "chat-message-sarha";
+          var messageId = Date.now().toString();
+        
+          const list = document.querySelector(".chat-conversation");
+          list.insertAdjacentHTML(
+            "beforeend",
+            `<div class="chat-message ${messageClass}" data-key="${messageId}">
+                    <a href="${url}" download>
+                        <i class="bi bi-file-earmark-medical" style="font-size: xx-large;"></i> Download PDF
+                    </a>
+                </div> `
+          );
+          list.scrollTop = list.scrollHeight + list.clientHeight;
+          setTimeout(function () {
+            $("#feedbackSurvey").modal("show");
+          }, 1000);
+        }
+        
+        function addReaction(id, reaction, otherReaction) {
+          const isVisible = document
+            .getElementById(id + "-" + reaction)
+            .classList.contains("visible");
+          const otherIsVisible = document
+            .getElementById(id + "-" + otherReaction)
+            .classList.contains("visible");
+        
+          var reactionToApply = "none";
+        
+          if (isVisible) {
+            document.getElementById(id + "-" + reaction).classList.remove("visible");
+          } else {
+            reactionToApply = reaction == "p" ? "positive" : "negative";
+            document.getElementById(id + "-" + reaction).classList.add("visible");
+            if (otherIsVisible) {
+              document
+                .getElementById(id + "-" + otherReaction)
+                .classList.remove("visible");
+            }
+          }
+        
+          for (let i = 0; i < messages.length; i++) {
+            if (messages[i].id == id) {
+              messages[i].feedback = reactionToApply;
+            }
+          }
+        }
+        
+        function closeChat() {
+          document.querySelector(".chat-window").style.display = "none";
+          document.querySelector(".overlay").style.display = "none";
+          document.getElementById("open-button").style.display = "block";
+        }
+    </script>
+  </body>
+</html>
