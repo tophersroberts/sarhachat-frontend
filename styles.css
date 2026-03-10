@@ -58,6 +58,13 @@ nav a {
   padding: 0 15px;
 }
 
+/* Hamburger toggler right margin on small screens */
+@media (max-width: 575px) {
+  .navbar-toggler {
+    margin-right: 10px;
+  }
+}
+
 /* Hamburger dropdown styling on mobile */
 @media (max-width: 991.98px) {
   .navbar-collapse {
@@ -336,8 +343,7 @@ html {
   border: none;
 }
 
-.card-front img,
-.card-back img {
+.card-front img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures images fill the card container */
@@ -353,6 +359,58 @@ html {
 }
 
 
+
+/* Card Back HTML/CSS Styles */
+.card-back-emotional,
+.card-back-contraception,
+.card-back-sexual,
+.card-back-personal {
+  border-radius: 20px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.card-back-emotional {
+  background: linear-gradient(to bottom right, #f78da7, #f9c89b);
+}
+
+.card-back-contraception {
+  background: linear-gradient(to bottom right, #c2e07c, #6ec6a5);
+}
+
+.card-back-sexual {
+  background: linear-gradient(to bottom right, #f5a623, #f7d36e);
+}
+
+.card-back-personal {
+  background: linear-gradient(to bottom right, #9b59b6, #5b7fb5);
+}
+
+.card-back-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 4cqi;
+  gap: 2cqi;
+  box-sizing: border-box;
+}
+
+.card-back-pill {
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  font-family: "Garet", sans-serif;
+  font-size: 3.6cqi;
+  font-weight: bold;
+  text-align: center;
+  padding: 2cqi 3.5cqi;
+  border-radius: 20px;
+  width: 90%;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
 
 .card:hover {
   transform: scale(1.05);
