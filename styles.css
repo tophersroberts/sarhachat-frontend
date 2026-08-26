@@ -116,6 +116,96 @@ nav a {
   margin-bottom: 20px;
 }
 
+/* ABOUT THE TEAM */
+#missionStatement .modal-content,
+#privacyPolicy .modal-content,
+#faqModal .modal-content,
+.about-team-modal {
+  border: 2px solid #000000;
+  border-radius: 10px;
+}
+
+#missionStatement .modal-header,
+#privacyPolicy .modal-header,
+#faqModal .modal-header,
+.about-team-modal .modal-header {
+  border-bottom: 2px solid #000000;
+}
+
+#missionStatement .modal-title,
+#privacyPolicy .modal-title,
+#faqModal .modal-title,
+.about-team-modal .modal-title,
+.team-member-card h3 {
+  font-family: "Telegraf", sans-serif;
+  font-weight: bold;
+  color: #000000;
+}
+
+.about-team-intro {
+  font-family: "Garet", sans-serif;
+  color: #555555;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.team-member-card {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.team-member-photo {
+  align-items: center;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #fc95f0, #fcca79);
+  color: #000000;
+  display: flex;
+  font-family: "Telegraf", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+}
+
+.team-member-content {
+  padding: 20px;
+}
+
+.team-member-card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.team-member-card p {
+  color: #555555;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.team-member-role {
+  color: #000000 !important;
+  font-family: "Telegraf", sans-serif;
+  font-weight: bold;
+}
+
+.team-member-affiliation {
+  font-style: italic;
+}
+
+@media (max-width: 575px) {
+  .about-team-modal .modal-body {
+    padding: 20px;
+  }
+
+  .team-member-content {
+    padding: 16px;
+  }
+}
+
 body,
 html {
   padding-top: 0;
