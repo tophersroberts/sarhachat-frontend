@@ -26,6 +26,10 @@ function hideFAQ() {
     $("#faqModal").modal("hide");
 }
 
+function showAboutTeam() {
+    $("#aboutTeamModal").modal("show");
+}
+
 let legalStatementPresented = 0;
 
 async function startChat(event) {
