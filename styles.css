@@ -159,16 +159,23 @@ nav a {
 }
 
 .team-member-photo {
-  align-items: center;
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #fc95f0, #fcca79);
+  background-color: #ffffff;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+
+.team-member-card h3 a {
   color: #000000;
-  display: flex;
-  font-family: "Telegraf", sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  justify-content: center;
-  text-align: center;
+  text-decoration: none;
+}
+
+.team-member-card h3 a:hover,
+.team-member-card h3 a:focus {
+  color: #000000;
+  text-decoration: underline;
 }
 
 .team-member-content {
@@ -194,6 +201,31 @@ nav a {
 
 .team-member-affiliation {
   font-style: italic;
+}
+
+.additional-contributors {
+  border-top: 2px solid #000000;
+  margin-top: 40px;
+  padding-top: 30px;
+}
+
+.additional-contributors h2 {
+  font-family: "Telegraf", sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.additional-contributors p {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  color: #555555;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 16px;
 }
 
 @media (max-width: 575px) {
