@@ -1,3 +1,92 @@
+/* Anonymous usage counts. Records that an event happened, never what
+   the user typed: the allow-list below is the only thing that can be
+   counted or sent, so message text cannot leak in. */
+var Usage = (function () {
+  // Collector URL. Empty = counts stay in this tab only.
+  var ENDPOINT = "";
+  var EVENTS = [
+    "chat_open",
+    "chat_message_sent",
+    "chat_close",
+    "locator_view",
+    "locator_use",
+  ];
+  var counts = {};
+  try {
+    counts = JSON.parse(sessionStorage.getItem("sarha-usage") || "{}");
+  } catch (e) {}
+
+  function record(name) {
+    if (EVENTS.indexOf(name) < 0) return;
+    counts[name] = (counts[name] || 0) + 1;
+    try {
+      sessionStorage.setItem("sarha-usage", JSON.stringify(counts));
+    } catch (e) {}
+  }
+
+  window.addEventListener("pagehide", function () {
+    if (ENDPOINT && navigator.sendBeacon) {
+      navigator.sendBeacon(
+        ENDPOINT,
+        new Blob([JSON.stringify(counts)], { type: "application/json" })
+      );
+    }
+  });
+
+  return { record: record, counts: counts };
+})();
+
+// The locator is cross-origin, so focus moving into it is the only
+// signal available — what the user searches is never visible here.
+window.addEventListener("blur", function () {
+  if (document.activeElement === document.getElementById("locator-widget")) {
+    Usage.record("locator_use");
+  }
+});
+
+function showLocator(show) {
+  var panel = document.getElementById("locator-panel");
+  var chat = document.querySelector(".chat-window");
+  show = Boolean(show && chat && window.getComputedStyle(chat).display !== "none");
+  panel.hidden = !show;
+  panel.classList.toggle("open", show);
+  var btn = document.getElementById("locator-toggle");
+  if (btn) {
+    btn.classList.toggle("active", show);
+    btn.setAttribute("aria-pressed", show ? "true" : "false");
+  }
+  if (show) {
+    placeLocator();
+    Usage.record("locator_view");
+  }
+}
+
+// Header pin: reveal the locator on demand, tap again to dismiss.
+function toggleLocator() {
+  var panel = document.getElementById("locator-panel");
+  showLocator(!panel.classList.contains("open"));
+}
+
+// Sit just left of the chat window, bottoms aligned.
+function placeLocator() {
+  var panel = document.getElementById("locator-panel");
+  if (!panel.classList.contains("open")) return;
+  // On small screens the CSS docks it to the bottom; clear any
+  // inline left/top left over from desktop so the CSS wins.
+  if (window.innerWidth <= 900) {
+    panel.style.left = "";
+    panel.style.top = "";
+    return;
+  }
+  var chat = document.querySelector(".chat-window").getBoundingClientRect();
+  panel.style.left =
+    Math.max(12, chat.left - panel.offsetWidth - 12) + "px";
+  panel.style.top =
+    Math.max(12, chat.bottom - panel.offsetHeight) + "px";
+}
+
+window.addEventListener("resize", placeLocator);
+
 function flipCard(card) {
   card.classList.toggle("flipped");
 }
@@ -63,6 +152,7 @@ async function openChat(event) {
     document.getElementById("open-button").disabled = false;
     document.getElementById("open-button").innerHTML = "<img src='Images/swirl.png' alt='Chat Icon' class='chat-icon' />Chat with SARHAchat";
     document.querySelector(".user-message").focus();
+    Usage.record("chat_open");
 
     if (openingMsgSent === 0) {
       addTypingIndicator();
@@ -74,7 +164,7 @@ async function openChat(event) {
           - Answer questions: Ask me any question about your body, sex, periods, pregnancy, STIs, birth control, or anything related
           - Birth control help: We can talk about your health, what you need, and what might work best for your life. Then we'll find birth control options that fit you.
 
-          <br><br>Just let me know which one feels right — Answering questions or Birth control help`,
+          <br><br>Just let me know which one feels right — Answering questions or Birth control help. También puedo ayudarte en español.`,
           0
         );
       }, 1500);
@@ -145,6 +235,7 @@ async function sendMessage(event) {
   const input = document.querySelector(".user-message");
   const text = input.value.trim();
   if (text !== "") {
+    Usage.record("chat_message_sent");
     addMessage(text, 1);
     input.value = "";
     input.focus();
@@ -285,8 +376,8 @@ function addMessage(text, isUser) {
           replaceFunc: (match, p1) => `<b>${p1}</b>`,
         },
         {
-          regex: /\s+-\s+(.+)/g,
-          replaceFunc: (match, p1) => `<br>• ${p1}`,
+          regex: /\s+-\s+/g,
+          replaceFunc: (match) => `<br>• `,
         },
         {
           regex: /### ([^<])+/g,
@@ -301,6 +392,8 @@ function addMessage(text, isUser) {
       });
     }
     
+    messageContent = messageContent.replace(/^(\s*<br\s*\/?>)+/gi, '').replace(/(\s*<br\s*\/?>)+\s*$/gi, '');
+
     const isOpening = messageContent.startsWith("Hi! How can I help you with your sexual");
     if (isOpening) {
       messageContent = messageContent.replace(
@@ -446,13 +539,15 @@ function addReaction(id, reaction, otherReaction) {
   }
 
   for (let i = 0; i < messages.length; i++) {
-    if (messages[i].id === id) {
+    if (messages[i].id == id) {
       messages[i].feedback = reactionToApply;
     }
   }
 }
 
 function closeChat() {
+  Usage.record("chat_close");
+  showLocator(false);
   document.querySelector(".chat-window").style.display = "none";
   document.querySelector(".overlay").style.display = "none";
   document.getElementById("open-button").style.display = "block";

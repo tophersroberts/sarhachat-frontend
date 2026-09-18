@@ -1239,3 +1239,93 @@ textarea:active {
     border: 1px solid #fcca79; /* Optional: Change border color */
     box-shadow: 0 0 5px #fc95f0; /* Optional: Adds a glow effect */
 }
+/* Clinic locator, floats alongside the open chat window. */
+.locator-panel {
+  position: fixed;
+  z-index: 1050;
+  display: none;
+  width: 200px;
+  /* Never taller than the viewport, so landscape (short height)
+     can't push it up over the chat header / close button. */
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+.locator-panel[hidden] {
+  display: none !important;
+}
+.locator-panel.open:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+}
+/* Scrolls internally if the widget is taller than the capped panel. */
+.locator-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  min-height: 0;
+}
+.locator-panel iframe {
+  display: block;
+  border: 0;
+}
+/* Always-reachable close, sits on top of the widget top-right. */
+.locator-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.62);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.locator-close:hover {
+  background: rgba(20, 20, 20, 0.82);
+}
+/* Pin toggle in the chat header opens/closes the locator on demand. */
+.chat-header .locator-toggle {
+  color: #0e9384;
+  padding: 2px 8px;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.chat-header .locator-toggle i {
+  font-size: 1.25rem;
+}
+.chat-header .locator-toggle-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.chat-header .locator-toggle.active {
+  color: #fff;
+  background: #0e9384;
+  border-radius: 6px;
+}
+/* No room beside the full-screen chat on small screens, so dock it
+   to the bottom as a full-width bar instead of hiding it. */
+@media (max-width: 900px) {
+  .locator-panel {
+    width: auto;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+  .locator-panel iframe {
+    width: 100%;
+  }
+}
