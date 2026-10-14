@@ -120,6 +120,7 @@ nav a {
 #missionStatement .modal-content,
 #privacyPolicy .modal-content,
 #faqModal .modal-content,
+.resources-modal,
 .about-team-modal {
   border: 2px solid #000000;
   border-radius: 10px;
@@ -128,6 +129,7 @@ nav a {
 #missionStatement .modal-header,
 #privacyPolicy .modal-header,
 #faqModal .modal-header,
+.resources-modal .modal-header,
 .about-team-modal .modal-header {
   border-bottom: 2px solid #000000;
 }
@@ -135,6 +137,7 @@ nav a {
 #missionStatement .modal-title,
 #privacyPolicy .modal-title,
 #faqModal .modal-title,
+.resources-modal .modal-title,
 .about-team-modal .modal-title,
 .team-member-card h3 {
   font-family: "Telegraf", sans-serif;
@@ -234,6 +237,182 @@ nav a {
   }
 
   .team-member-content {
+    padding: 16px;
+  }
+}
+
+/* RESOURCES */
+.resources-modal .modal-body {
+  padding: 24px;
+}
+
+.resources-intro {
+  margin: 0 auto 24px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.resources-intro h2,
+.resources-category h2,
+.resources-care h2,
+.resource-card h3,
+.resources-data h2 {
+  font-family: "Telegraf", sans-serif;
+  font-weight: bold;
+  color: #000000;
+}
+
+.resources-intro h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.resources-modal p,
+.resources-emergency {
+  color: #555555;
+  line-height: 1.5;
+}
+
+.resources-intro p,
+.resources-data {
+  background-color: #f8f9fa;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  color: #555555;
+  line-height: 1.5;
+  margin: 8px 0 24px;
+  padding: 20px;
+}
+
+.resources-data h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.resources-data ul {
+  margin-bottom: 0;
+  padding-left: 24px;
+}
+
+.resources-data li + li {
+  margin-top: 12px;
+}
+
+.resources-privacy-link {
+  background: none;
+  border: 0;
+  color: #000000;
+  font: inherit;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.resources-privacy-link:hover,
+.resources-privacy-link:focus-visible {
+  background-color: #fcca79;
+}
+
+.resources-note {
+  font-family: "Garet", sans-serif;
+}
+
+.resources-emergency {
+  display: flex;
+  gap: 12px;
+  background-color: #fcca79;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  color: #000000;
+  margin-bottom: 24px;
+  padding: 16px;
+}
+
+.resources-category h2,
+.resources-care h2 {
+  border-bottom: 2px solid #000000;
+  font-size: 22px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+}
+
+.resources-category + .resources-category {
+  margin-top: 30px;
+}
+
+.resource-card {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  padding: 20px;
+}
+
+.resource-priority {
+  border-left: 6px solid #fcca79;
+}
+
+.resource-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.resource-card p {
+  margin-bottom: 16px;
+}
+
+.resource-clinic {
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.resource-clinic iframe {
+  border: 0;
+  display: block;
+  margin: 0 auto 16px;
+  max-width: 100%;
+}
+
+.resources-modal a {
+  color: #000000;
+  overflow-wrap: anywhere;
+}
+
+.resource-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.resource-actions a {
+  border: 1px solid #000000;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.resource-actions a:hover,
+.resource-actions a:focus-visible,
+.resource-link:hover,
+.resource-link:focus-visible {
+  background-color: #fcca79;
+  color: #000000;
+  text-decoration: underline;
+}
+
+.resources-note {
+  border-top: 2px solid #000000;
+  font-size: 14px;
+  margin: 8px 0 0;
+  padding-top: 20px;
+}
+
+@media (max-width: 575px) {
+  .resources-modal .modal-body {
+    padding: 20px;
+  }
+
+  .resource-card {
     padding: 16px;
   }
 }

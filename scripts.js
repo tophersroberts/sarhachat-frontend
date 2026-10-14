@@ -119,6 +119,10 @@ function showAboutTeam() {
     $("#aboutTeamModal").modal("show");
 }
 
+function showResources() {
+    $("#resourcesModal").modal("show");
+}
+
 let legalStatementPresented = 0;
 
 async function startChat(event) {

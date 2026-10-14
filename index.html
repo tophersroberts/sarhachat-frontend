@@ -53,6 +53,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="showAboutTeam()">About the Team</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showResources()">Resources</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -826,6 +829,121 @@
               </div>
 
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources Modal -->
+    <div class="modal fade" id="resourcesModal" tabindex="-1" aria-labelledby="resourcesModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content resources-modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="resourcesModalLabel">Resources</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="resources-intro">
+              <h2>Find Care &amp; Hotlines</h2>
+              <p>SARHAchat is not an emergency service and cannot provide urgent help. If you want to talk to a real person, the hotlines below are free and confidential.<br />To find a clinic near you, use the federal locator.</p>
+            </div>
+            <div class="resources-emergency">
+              <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+              <div><strong>If this is an emergency, call <a href="tel:911">911</a>.</strong><br />If you are thinking about suicide or in emotional crisis, call or text <a href="tel:988">988</a> to reach the 988 Suicide &amp; Crisis Lifeline, any time.</div>
+            </div>
+            <div class="row g-4">
+              <div class="col-12 col-lg-4 order-2 order-lg-1">
+                <section class="resources-care" aria-labelledby="resourcesCareHeading">
+                  <h2 id="resourcesCareHeading">Clinical Care</h2>
+                  <article class="resource-card resource-clinic">
+                    <h3>Find a clinic near you</h3>
+                    <p>Search Title X family planning clinics for birth control, STI testing and treatment, pregnancy testing, and related care — often at low or no cost, whether or not you have insurance.</p>
+                    <iframe title="Resources: Find a family planning clinic" src="https://reproductivehealthservices.gov/locator-widget/partner-sidebar-1" width="200" height="260" loading="lazy"></iframe>
+                    <a class="resource-link" href="https://reproductivehealthservices.gov/" target="_blank" rel="noopener noreferrer">Open ReproductiveHealthServices.gov <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                  </article>
+                  <article class="resource-card">
+                    <h3>Planned Parenthood</h3>
+                    <p>Sexual and reproductive health information, healthcare services, and a health center locator.</p>
+                    <a class="resource-link" href="https://www.plannedparenthood.org/" target="_blank" rel="noopener noreferrer">Visit Planned Parenthood <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                  </article>
+                  <article class="resource-card">
+                    <h3>AbortionFinder.org</h3>
+                    <p>Find verified abortion providers and resources for financial assistance, travel, and other support.</p>
+                    <a class="resource-link" href="https://www.abortionfinder.org/" target="_blank" rel="noopener noreferrer">Visit AbortionFinder <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                  </article>
+                </section>
+              </div>
+              <div class="col-12 col-lg-8 order-1 order-lg-2">
+                <section class="resources-category" aria-labelledby="resourcesCrisisHeading">
+                  <h2 id="resourcesCrisisHeading">IF YOU ARE IN CRISIS OR UNSAFE — 24/7</h2>
+                  <article class="resource-card resource-priority">
+                    <h3>988 Suicide &amp; Crisis Lifeline</h3>
+                    <p>Suicidal thoughts, mental health, or substance use crisis. Free and confidential, 24/7.</p>
+                    <div class="resource-actions">
+                      <a href="tel:988"><i class="bi bi-telephone" aria-hidden="true"></i> Call 988</a>
+                      <a href="sms:988"><i class="bi bi-chat-dots" aria-hidden="true"></i> Text 988</a>
+                      <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer">Chat online <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                    </div>
+                  </article>
+                  <article class="resource-card resource-priority">
+                    <h3>National Domestic Violence Hotline</h3>
+                    <p>Free, confidential support for relationship abuse, safety planning, and finding local services.</p>
+                    <div class="resource-actions">
+                      <a href="tel:18007997233"><i class="bi bi-telephone" aria-hidden="true"></i> Call 1-800-799-SAFE (7233)</a>
+                      <a href="sms:88788"><i class="bi bi-chat-dots" aria-hidden="true"></i> Text START to 88788</a>
+                      <a href="https://www.thehotline.org/" target="_blank" rel="noopener noreferrer">Get support online <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                    </div>
+                  </article>
+                  <article class="resource-card resource-priority">
+                    <h3>RAINN / National Sexual Assault Hotline</h3>
+                    <p>Free, confidential support for survivors of sexual assault and their loved ones, with referrals to local services.</p>
+                    <div class="resource-actions">
+                      <a href="tel:18006564673"><i class="bi bi-telephone" aria-hidden="true"></i> Call 1-800-656-HOPE (4673)</a>
+                      <a href="sms:64673"><i class="bi bi-chat-dots" aria-hidden="true"></i> Text HOPE to 64673</a>
+                      <a href="https://rainn.org/help-and-healing/hotline/" target="_blank" rel="noopener noreferrer">Get support online <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                    </div>
+                  </article>
+                  <article class="resource-card resource-priority">
+                    <h3>National Human Trafficking Hotline</h3>
+                    <p>Confidential support and connections to services for people experiencing human trafficking and those concerned about someone.</p>
+                    <div class="resource-actions">
+                      <a href="tel:18883737888"><i class="bi bi-telephone" aria-hidden="true"></i> Call 1-888-373-7888</a>
+                      <a href="sms:233733"><i class="bi bi-chat-dots" aria-hidden="true"></i> Text 233733</a>
+                      <a href="https://humantraffickinghotline.org/en" target="_blank" rel="noopener noreferrer">Get support online <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                    </div>
+                  </article>
+                  <article class="resource-card resource-priority">
+                    <h3>SAMHSA National Helpline</h3>
+                    <p>Free, confidential information and referrals for mental health and substance use treatment, in English and Spanish.</p>
+                    <div class="resource-actions">
+                      <a href="tel:18006624357"><i class="bi bi-telephone" aria-hidden="true"></i> Call 1-800-662-HELP (4357)</a>
+                      <a href="https://www.samhsa.gov/find-help/helplines/national-helpline" target="_blank" rel="noopener noreferrer">Visit SAMHSA <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                    </div>
+                  </article>
+                </section>
+                <section class="resources-category" aria-labelledby="resourcesInformationHeading">
+                  <h2 id="resourcesInformationHeading">General Information</h2>
+                  <article class="resource-card">
+                    <h3>Bedsider</h3>
+                    <p>Explore birth control options and practical information about sexual health and relationships from the nonprofit Power to Decide.</p>
+                    <a class="resource-link" href="https://www.bedsider.org/" target="_blank" rel="noopener noreferrer">Visit Bedsider <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                  </article>
+                  <article class="resource-card">
+                    <h3>CDC Sexual Health Resources</h3>
+                    <p>Information from the Centers for Disease Control and Prevention about sexually transmitted infections, prevention, and testing.</p>
+                    <a class="resource-link" href="https://www.cdc.gov/sti/" target="_blank" rel="noopener noreferrer">Explore CDC STI resources <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                  </article>
+                </section>
+              </div>
+            </div>
+            <section class="resources-data" aria-labelledby="resourcesDataHeading">
+              <h2 id="resourcesDataHeading"><i class="bi bi-shield-check" aria-hidden="true"></i> About this tool and your data</h2>
+              <ul>
+                <li>The clinic search above is a tool run by HHS and loaded directly from reproductivehealthservices.gov. Whatever you type into it — including your ZIP code — goes to HHS and is handled under <a href="https://www.hhs.gov/privacy/privacy-policy/index.html" target="_blank" rel="noopener noreferrer">their privacy policy</a>. SARHAchat cannot see it.</li>
+                <li><strong>We never record what you type into the clinic search</strong> — no ZIP codes, no search terms, no names, no phone numbers. See our <button type="button" class="resources-privacy-link" data-bs-toggle="modal" data-bs-target="#privacyPolicy">Privacy Policy</button>.</li>
+              </ul>
+            </section>
+            <p class="resources-note">Website links open in a new tab. These organizations operate independently of SARHAchat and have their own privacy policies. The clinic search is provided directly by HHS; SARHAchat cannot see what you enter.</p>
           </div>
         </div>
       </div>
