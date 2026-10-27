@@ -15,7 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
       rel="stylesheet"
     />
-    <link href="styles.css?v=1.2" rel="stylesheet" />
+    <link href="styles.css?v=1.4" rel="stylesheet" />
   </head>
   <body>
     <div class="overlay"></div>
@@ -151,13 +151,14 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
             <div class="card" onclick="flipCard(this)">
               <div class="card-inner">
-                <!-- Front Side of Card with Image -->
+                <!-- Decorative background with a translatable HTML title -->
                 <div class="card-front">
                   <img
-                    src="Images/Cards/emotional-support-front.png"
+                    src="Images/Cards/emotional-support-background.png"
                     class="img-fluid"
-                    alt="Emotional Support Front"
+                    alt=""
                   />
+                  <h3 class="card-front-title">Emotional Support</h3>
                 </div>
                 <!-- Back Side of Card with HTML/CSS -->
                 <div class="card-back card-back-emotional">
@@ -175,13 +176,14 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
             <div class="card" onclick="flipCard(this)">
               <div class="card-inner">
-                <!-- Front Side of Card with Image -->
+                <!-- Decorative background with a translatable HTML title -->
                 <div class="card-front">
                   <img
-                    src="Images/Cards/contraception-options-front.png"
+                    src="Images/Cards/contraception-options-background.png"
                     class="img-fluid"
-                    alt="Contraception Options Front"
+                    alt=""
                   />
+                  <h3 class="card-front-title">Contraception Options</h3>
                 </div>
                 <!-- Back Side of Card with HTML/CSS -->
                 <div class="card-back card-back-contraception">
@@ -200,13 +202,14 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
             <div class="card" onclick="flipCard(this)">
               <div class="card-inner">
-                <!-- Front Side of Card with Image -->
+                <!-- Decorative background with a translatable HTML title -->
                 <div class="card-front">
                   <img
-                    src="Images/Cards/sexual-health-front.png"
+                    src="Images/Cards/sexual-health-background.png"
                     class="img-fluid"
-                    alt="Sexual Health Front"
+                    alt=""
                   />
+                  <h3 class="card-front-title card-front-title-sexual">Sexual Health Education</h3>
                 </div>
                 <!-- Back Side of Card with HTML/CSS -->
                 <div class="card-back card-back-sexual">
@@ -224,13 +227,14 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
             <div class="card" onclick="flipCard(this)">
               <div class="card-inner">
-                <!-- Front Side of Card with Image -->
+                <!-- Decorative background with a translatable HTML title -->
                 <div class="card-front">
                   <img
-                    src="Images/Cards/personal-summaries-front.png"
+                    src="Images/Cards/personal-summaries-background.png"
                     class="img-fluid"
-                    alt="Personal Summaries Front"
+                    alt=""
                   />
+                  <h3 class="card-front-title">Personal Summaries</h3>
                 </div>
                 <!-- Back Side of Card with HTML/CSS -->
                 <div class="card-back card-back-personal">
@@ -437,6 +441,12 @@
     </div>
   </div>
 </section>
+
+    <!-- Frontend language selector; chat translation is handled separately. -->
+    <div class="site-language-switcher notranslate" translate="no">
+      <i class="bi bi-translate" aria-hidden="true"></i>
+      <div class="gtranslate_wrapper"></div>
+    </div>
 
 <form onsubmit="startChat(event)">
   <button type="button" class="chat-open-btn" id="open-button" onclick="startChat(event)">
@@ -849,7 +859,7 @@
             </div>
             <div class="resources-emergency">
               <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
-              <div><strong>If this is an emergency, call <a href="tel:911">911</a>.</strong><br />If you are thinking about suicide or in emotional crisis, call or text <a href="tel:988">988</a> to reach the 988 Suicide &amp; Crisis Lifeline, any time.</div>
+              <div><strong>If this is an emergency, call <a href="tel:911">911</a>.</strong><br />If you are thinking about harming yourself or in emotional crisis, call or text <a href="tel:988">988</a> to reach the 988 Suicide &amp; Crisis Lifeline, any time.</div>
             </div>
             <div class="row g-4">
               <div class="col-12 col-lg-4 order-2 order-lg-1">
@@ -878,7 +888,7 @@
                   <h2 id="resourcesCrisisHeading">IF YOU ARE IN CRISIS OR UNSAFE — 24/7</h2>
                   <article class="resource-card resource-priority">
                     <h3>988 Suicide &amp; Crisis Lifeline</h3>
-                    <p>Suicidal thoughts, mental health, or substance use crisis. Free and confidential, 24/7.</p>
+                    <p>Support if you are thinking about harming yourself or experiencing a mental health or substance use crisis. Free and confidential, 24/7.</p>
                     <div class="resource-actions">
                       <a href="tel:988"><i class="bi bi-telephone" aria-hidden="true"></i> Call 988</a>
                       <a href="sms:988"><i class="bi bi-chat-dots" aria-hidden="true"></i> Text 988</a>
@@ -1084,7 +1094,8 @@
     </div>
 
     <form
-      class="chat-window bg-white"
+      class="chat-window bg-white notranslate"
+      translate="no"
       id="chat-window-form"
       onsubmit="sendMessage(event)"
     >
@@ -1132,6 +1143,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdOlQsqAAAAAIdOYPixmKb_vzOQvq7CaXlv_SJG"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="scripts.js?v=1.2"></script>
+    <script src="scripts.js?v=1.3"></script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
   </body>
 </html>

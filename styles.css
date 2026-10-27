@@ -644,11 +644,44 @@ html {
   border: none;
 }
 
+.card-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  container-type: inline-size;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
 .card-front img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures images fill the card container */
   border-radius: 20px; /* Rounded edges matching the card */
+}
+
+/* Real text lets GTranslate translate the titles over the decorative images. */
+.card-front-title {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 5cqi;
+  font-family: "Telegraf", sans-serif;
+  font-size: 9cqi;
+  font-weight: bold;
+  line-height: 1.1;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
+.card-front-title-sexual {
+  width: 70%;
+  padding: 0;
 }
 
 .card-back {
@@ -1122,6 +1155,46 @@ html {
   text-align: center;
   max-width: 700px; /* Adjust for better readability */
   margin: 0 auto;
+}
+
+/* Frontend language selector, opposite the chat launcher. */
+.site-language-switcher {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #333333;
+  border-radius: 0.375rem;
+  z-index: 1050;
+}
+
+.site-language-switcher .gt_selector {
+  min-height: 44px;
+  padding: 10px 0;
+  font-family: "Garet", sans-serif;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 0;
+  cursor: pointer;
+}
+
+.site-language-switcher:focus-within {
+  outline: 2px solid #0e9384;
+  outline-offset: 3px;
+}
+
+/* Keep both floating controls reachable on narrow screens. */
+@media (max-width: 575px) {
+  .site-language-switcher {
+    bottom: 120px;
+  }
 }
 
 /* CHATBOT */
