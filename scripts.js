@@ -1,3 +1,13 @@
+// GTranslate's frontend widget for translation to Spanish. Chat content is marked notranslate in HTML.
+window.gtranslateSettings = {
+  default_language: "en",
+  languages: ["en", "es"],
+  native_language_names: true,
+  detect_browser_language: false,
+  wrapper_selector: ".gtranslate_wrapper",
+  select_language_label: "Language / Idioma",
+};
+
 /* Anonymous usage counts. Records that an event happened, never what
    the user typed: the allow-list below is the only thing that can be
    counted or sent, so message text cannot leak in. */
