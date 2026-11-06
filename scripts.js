@@ -160,6 +160,7 @@ async function openChat(event) {
 
   const token = sessionStorage.getItem("sarha-auth-token");
   if (await verifyToken(token)) {
+    document.body.classList.add("chat-open");
     document.querySelector(".chat-window").style.display = "block";
     document.querySelector(".overlay").style.display = "block";
     document.getElementById("open-button").style.display = "none";
@@ -647,6 +648,7 @@ function addReaction(id, reaction, otherReaction) {
 }
 
 function closeChat() {
+  document.body.classList.remove("chat-open");
   Usage.record("chat_close");
   showLocator(false);
   document.querySelector(".chat-window").style.display = "none";
