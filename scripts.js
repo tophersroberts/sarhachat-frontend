@@ -242,8 +242,47 @@ function submitOnEnter(event) {
 }
 
 let messages = [];
+// One id per page load so the backend can group this conversation's per-turn history files.
+const conversationId =
+  (window.crypto && crypto.randomUUID)
+    ? crypto.randomUUID()
+    : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 let currentStage = "";
 let educationMode = false;
+
+// Tone / length dropdowns beside the send button. "balanced" (the default) is
+// not sent, so the backend keeps its current behavior.
+const STYLE_SELECTS = { tone: "tone-select", response_length: "length-select" };
+
+function getResponseStyle() {
+  const style = {};
+  for (const [key, id] of Object.entries(STYLE_SELECTS)) {
+    const select = document.getElementById(id);
+    if (select && select.value !== "balanced") {
+      style[key] = select.value;
+    }
+  }
+  return style;
+}
+
+// Keep the choice for this browser session.
+document.addEventListener("DOMContentLoaded", () => {
+  for (const id of Object.values(STYLE_SELECTS)) {
+    const select = document.getElementById(id);
+    if (!select) continue;
+    try {
+      const saved = sessionStorage.getItem("sarha-" + id);
+      if (saved && select.querySelector(`option[value="${saved}"]`)) {
+        select.value = saved;
+      }
+    } catch (e) {}
+    select.addEventListener("change", () => {
+      try {
+        sessionStorage.setItem("sarha-" + id, select.value);
+      } catch (e) {}
+    });
+  }
+});
 
 async function sendMessage(event) {
   const input = document.querySelector(".user-message");
@@ -266,14 +305,17 @@ async function sendMessage(event) {
         current_stage: currentStage,
         education_mode: educationMode,
         authentication_token: authToken,
+        conversation_id: conversationId,
       };
     } else {
       postData = {
         chat_history: messages,
         education_mode: educationMode,
         authentication_token: authToken,
+        conversation_id: conversationId,
       };
     }
+    Object.assign(postData, getResponseStyle());
 
     const chatUrl =
       "https://q6isljp5pvpfd557vf5e5oimsa0rlirv.lambda-url.us-east-1.on.aws";
@@ -298,6 +340,10 @@ async function sendMessage(event) {
           chunks.forEach((chunk) => addMessage(chunk, 0));
         } else {
           addMessage(response.data.response, 0);
+        }
+        // null = no footer (welcome message, consultation, safety replies)
+        if (Array.isArray(response.data.sources)) {
+          addSources(response.data.sources);
         }
       } else {
         removeTypingIndicator();
@@ -507,6 +553,47 @@ function addImage(url) {
     `<div class="chat-message-img ${messageClass}" data-key="${messageId}">
             <img src="${url}"/>
         </div> `
+  );
+  list.scrollTop = list.scrollHeight + list.clientHeight;
+}
+
+function escapeHtml(text) {
+  return String(text ?? "").replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  })[c]);
+}
+
+// Citation footer under an education answer. Built from the backend's
+// `sources` field, not from the model's text, and deliberately NOT pushed to
+// `messages` so it never goes back to the model as chat history.
+// An empty list (nothing matched in the library) shows no footer.
+function addSources(sources) {
+  if (sources.length === 0) return;
+
+  const list = document.querySelector(".chat-conversation");
+  const names = [...new Set(sources.map((s) => s.name))];
+  const items = sources.map((s) => {
+    if (s.tier === "full") {
+      const title = s.url
+        ? `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.title)} <i class="bi bi-box-arrow-up-right"></i></a>`
+        : `<span>${escapeHtml(s.title)}</span>`;
+      return `<li class="source-full">
+                <div class="source-name">${escapeHtml(s.name)}</div>
+                ${title}
+                ${s.excerpt ? `<blockquote>${escapeHtml(s.excerpt)}</blockquote>` : ""}
+              </li>`;
+    }
+    return `<li class="source-general">Based on <b>${escapeHtml(s.name)}</b> <span>(general match, not a specific page)</span></li>`;
+  }).join("");
+
+  const body = `<details class="sources-toggle">
+                  <summary><i class="bi bi-journal-text"></i> Source: ${escapeHtml(names.join(", "))}</summary>
+                  <ul>${items}</ul>
+                </details>`;
+
+  list.insertAdjacentHTML(
+    "beforeend",
+    `<div class="chat-message chat-message-sarha chat-sources" data-key="${Date.now()}-sources">${body}</div>`
   );
   list.scrollTop = list.scrollHeight + list.clientHeight;
 }

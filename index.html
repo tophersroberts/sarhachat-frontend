@@ -15,7 +15,85 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
       rel="stylesheet"
     />
-    <link href="styles.css?v=1.4" rel="stylesheet" />
+    <link href="styles.css?v=1.5" rel="stylesheet" />
+    <style>
+      /* Citation footer under education answers (scripts.js addSources) */
+      .chat-sources {
+        background-color: #ffffff;
+        border: 1px solid #e2e2e2;
+        font-size: 0.85rem;
+        color: #555555;
+      }
+      .chat-sources summary {
+        cursor: pointer;
+        list-style: none;
+        font-weight: 600;
+      }
+      .chat-sources summary::-webkit-details-marker { display: none; }
+      .chat-sources summary::after { content: " \25B8"; }
+      .chat-sources details[open] summary::after { content: " \25BE"; }
+      .chat-sources ul {
+        list-style: none;
+        margin: 6px 0 2px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .chat-sources .source-name {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #888888;
+      }
+      .chat-sources a { font-weight: 600; }
+      .chat-sources blockquote {
+        margin: 4px 0 0;
+        padding-left: 8px;
+        border-left: 3px solid #fcca79;
+        font-style: italic;
+      }
+      .chat-sources .source-general span { color: #888888; }
+
+      /* Tone / length dropdowns beside the send button */
+      .chat-footer { gap: 8px; }
+      .style-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        min-width: 0;
+      }
+      .style-options .form-select {
+        --style-accent: #5ca9a7;
+        --style-accent-dark: #4a918f;
+        width: auto;
+        color: #ffffff;
+        font-weight: 600;
+        background-color: var(--style-accent);
+        border-color: var(--style-accent);
+        /* white chevron (Bootstrap's default one is dark grey) */
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        cursor: pointer;
+      }
+      .style-options .form-select:hover {
+        background-color: var(--style-accent-dark);
+        border-color: var(--style-accent-dark);
+      }
+      .style-options .form-select:focus {
+        border-color: var(--style-accent-dark);
+        box-shadow: 0 0 0 0.2rem rgba(92, 169, 167, 0.35);
+      }
+      /* keep the opened list readable where browsers inherit the fill */
+      .style-options .form-select option {
+        color: #333333;
+        background-color: #ffffff;
+        font-weight: normal;
+      }
+      @media (max-width: 576px) {
+        /* 16px stops iOS Safari zooming in when a dropdown is tapped */
+        .style-options .form-select { font-size: 16px; }
+      }
+    </style>
   </head>
   <body>
     <div class="overlay"></div>
@@ -203,13 +281,13 @@
             <div class="card" onclick="flipCard(this)">
               <div class="card-inner">
                 <!-- Decorative background with a translatable HTML title -->
-                <div class="card-front">
+                <div class="card-front card-front-sexual">
                   <img
                     src="Images/Cards/sexual-health-background.png"
                     class="img-fluid"
                     alt=""
                   />
-                  <h3 class="card-front-title card-front-title-sexual">Sexual Health Education</h3>
+                  <h3 class="card-front-title">Sexual Health Education</h3>
                 </div>
                 <!-- Back Side of Card with HTML/CSS -->
                 <div class="card-back card-back-sexual">
@@ -1122,7 +1200,30 @@
           onkeydown="submitOnEnter(event)"
         ></textarea>
       </div>
-      <div class="chat-footer text-end p-2">
+      <div class="chat-footer p-2 d-flex align-items-center justify-content-between">
+        <!-- Response style for the next answers (scripts.js getResponseStyle) -->
+        <div class="style-options">
+          <select
+            id="tone-select"
+            class="form-select form-select-sm"
+            aria-label="Answer tone"
+            title="Answer tone"
+          >
+            <option value="balanced" selected>Tone</option>
+            <option value="friendly">Friendly</option>
+            <option value="academic">Academic</option>
+          </select>
+          <select
+            id="length-select"
+            class="form-select form-select-sm"
+            aria-label="Answer length"
+            title="Answer length (applies to answers to your questions)"
+          >
+            <option value="balanced" selected>Length</option>
+            <option value="shorter">Shorter</option>
+            <option value="longer">Longer</option>
+          </select>
+        </div>
         <button
           type="button"
           class="btn btn-primary"

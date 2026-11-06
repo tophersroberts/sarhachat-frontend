@@ -679,9 +679,9 @@ html {
   overflow-wrap: normal;
 }
 
-.card-front-title-sexual {
-  width: 70%;
-  padding: 0;
+.card-front-sexual img {
+  /* Crop the thin black strip baked into the source image's left edge. */
+  transform: scale(1.01);
 }
 
 .card-back {
