@@ -1190,10 +1190,42 @@ html {
   outline-offset: 3px;
 }
 
+body.chat-open .site-language-switcher {
+  display: none;
+}
+
 /* Keep both floating controls reachable on narrow screens. */
 @media (max-width: 575px) {
   .site-language-switcher {
-    bottom: 120px;
+    bottom: 50px;
+    left: 12px;
+    width: 34vw;
+    padding: 0 6px;
+    gap: 4px;
+  }
+
+  .site-language-switcher .gtranslate_wrapper {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .site-language-switcher .gt_selector {
+    width: 100%;
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  #open-button {
+    right: 12px;
+    width: calc(66vw - 36px);
+    min-height: 46px;
+    padding: 8px 6px;
+    font-size: 14px;
+  }
+
+  #open-button .chat-icon {
+    width: 24px;
+    margin-right: 4px;
   }
 }
 
