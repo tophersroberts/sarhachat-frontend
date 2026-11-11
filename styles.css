@@ -1112,11 +1112,21 @@ html {
   color: #000000;
 }
 
-.privacy-content p {
+.privacy-content p,
+.privacy-content ul {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
   color: #555555;
+}
+
+.privacy-content strong {
+  font-weight: bold;
+  color: #555555;
+}
+
+.privacy-content .privacy-section-title {
+  color: #000000;
 }
 
 .privacy-content a {
